@@ -1,6 +1,9 @@
 # Eclipse
-.metadata
 */bin/*
+*Cache
+.metadata/.lock
+.metadata/.log
+.metadata
 
 # OS generated files #
 .DS_Store
