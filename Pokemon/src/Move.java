@@ -1,5 +1,5 @@
 
 public class Move {
-	public void Move(String Name, int Type, int BasePower,int Attack, int Defense)
+	public void Move(String Name, Type MoveType, int BasePower,int Attack, int Defense)
 	{}
 }

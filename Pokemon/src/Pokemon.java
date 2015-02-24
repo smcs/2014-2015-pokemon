@@ -2,7 +2,7 @@
 public class Pokemon {
 	
 	public void Pokemon (int Species, String Name, int Ability, int Nature, int HeldItem, int Level, int Exp,
-			int Type1, int Type2, int Status, boolean confused, int currentHealth, boolean Gender,
+			Type Type1, Type Type2, int Status, boolean confused, int currentHealth, boolean Gender,
 			Move Move1, Move Move2, Move Move3, Move Move4, 
 			int HealthBase, int Hiv, int Hev, 
 			int AtkBase, int Atkiv, int Atkev,
