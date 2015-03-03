@@ -1,8 +1,10 @@
 import objectdraw.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class PokemonController extends WindowController{
+public class PokemonController extends WindowController implements MouseListener{
 
 	int width = 750;
 	int height = 500;
@@ -34,6 +36,9 @@ public class PokemonController extends WindowController{
 			setP2Name();
 			drawBSmain();
 			BattleSimulator bs = new BattleSimulator();
+			//this will be where pokemon selection will happen
+				//within that if loop will be where move selection will happen
+					//then pokemon will be created here
 		}
 		
 	}
@@ -52,7 +57,44 @@ public class PokemonController extends WindowController{
 	private void drawBSmain() {
 		
 		canvas.clear();
+		Text pokeSelection = new Text("Select Your Pokemon!", 300, 30, canvas);
+		pokeSelection.setFontSize(40);
+		//pokeSelection.setBold();
+		//set up screen so both players can select their pokemon
+			//click in certain box/button will select certain pokemon
+			//once both are selected, move on to move selection
+				//when complete, move on to battle stage
 		
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	

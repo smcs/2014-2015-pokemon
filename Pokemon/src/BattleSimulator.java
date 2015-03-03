@@ -3,14 +3,16 @@ import objectdraw.*;
 public class BattleSimulator {
 
 	public BattleSimulator(){
-
 		
 		
-		//set player 1 pokemon and player 2 pokemon
-			//Pokemon Name1 = new Pokemon(blah blah);
-			//Pokemon Name2 = new Pokemon(blah blah);
 		
-		
+	}
+	
+	public void createP1Pokemon(){
+		//Pokemon P1poke = new Pokemon(blah blah);
+	}
+	public void createP2Pokemon(){
+		//Pokemon P2poke = new Pokemon(blah blah);
 	}
 	
 }
