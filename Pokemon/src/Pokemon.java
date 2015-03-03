@@ -2,7 +2,7 @@
 public class Pokemon {
 	
 	public Pokemon (int Species, String Name, String Ability, String Nature, String HeldItem, int Level, int Exp,
-			Type Type1, Type Type2, int Status, boolean confused, boolean Gender, int CatchRate,
+			int Status, boolean confused, boolean Gender, int CatchRate,
 			Move Move1, Move Move2, Move Move3, Move Move4, 
 			int Hiv, int Hev, 
 			int Atkiv, int Atkev,
@@ -12,11 +12,11 @@ public class Pokemon {
 			int Speediv, int Speedev)
 	{
 		if (Species == 25){
-			Pickachu(Species, Name, Ability, Nature,  HeldItem, Level, Exp,
-			Type1, null, Status, confused, Gender, 190,
-			 Move1, Move2, Move3, Move4, 
-			 35,  Hiv, Hev, 0,
-			 55, Atkiv, Atkev, 0,
+			Pickachu(25, Name, Ability, Nature,  HeldItem, Level, Exp,
+			Type.Electric, null, Status, confused, Gender, 190,
+			Move1, Move2, Move3, Move4, 
+			35,  Hiv, Hev, 0,
+			55, Atkiv, Atkev, 0,
 			40, Defiv, Defev, 0,
 			50, SpAtkiv, SpAtkev, 0,
 			50, SpDefiv, SpDefev, 0,
