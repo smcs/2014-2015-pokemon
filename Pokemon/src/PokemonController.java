@@ -1,5 +1,7 @@
 import objectdraw.*;
+
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -18,13 +20,18 @@ public class PokemonController extends WindowController implements MouseListener
 	
 		((Component) canvas).setBackground(new Color(205, 205, 205));
 		
-		FramedRect battleSim = new FramedRect(50, 300, 300, 80, canvas);
-		Text battleSimText = new Text("Battle Simulator", 80, 320, canvas);
-		battleSimText.setFontSize(32);
+		JButton battleSim = new JButton("Battle Simulator");
 		
-		FramedRect campaign = new FramedRect(width - 350, 300, 300, 80, canvas);
-		Text campaignText = new Text("Campaign", 470, 320, canvas);
-		campaignText.setFontSize(32);
+		battleSim.setBounds(50, 300, 300, 80);
+		//FramedRect battleSim = new FramedRect(50, 300, 300, 80, canvas);
+		//Text battleSimText = new Text("Battle Simulator", 80, 320, canvas);
+		//battleSimText.setFontSize(32);
+		
+		JButton campaign = new JButton("Campaign");
+		campaign.setBounds(400, 300, 300, 80);
+		//FramedRect campaign = new FramedRect(width - 350, 300, 300, 80, canvas);
+		//Text campaignText = new Text("Campaign", 470, 320, canvas);
+		//campaignText.setFontSize(32);
 		
 	}
 	
@@ -59,6 +66,7 @@ public class PokemonController extends WindowController implements MouseListener
 		canvas.clear();
 		Text pokeSelection = new Text("Select Your Pokemon!", 300, 30, canvas);
 		pokeSelection.setFontSize(40);
+		JComboBox cb1 = new JComboBox();
 		//pokeSelection.setBold();
 		//set up screen so both players can select their pokemon
 			//click in certain box/button will select certain pokemon
