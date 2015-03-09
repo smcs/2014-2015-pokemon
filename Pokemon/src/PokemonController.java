@@ -21,7 +21,6 @@ public class PokemonController extends WindowController implements MouseListener
 		((Component) canvas).setBackground(new Color(205, 205, 205));
 		
 		JButton battleSim = new JButton("Battle Simulator");
-		
 		battleSim.setBounds(50, 300, 300, 80);
 		//FramedRect battleSim = new FramedRect(50, 300, 300, 80, canvas);
 		//Text battleSimText = new Text("Battle Simulator", 80, 320, canvas);
@@ -34,7 +33,7 @@ public class PokemonController extends WindowController implements MouseListener
 		//campaignText.setFontSize(32);
 		
 	}
-	
+	/*
 	public void onMouseClick(Location point){
 		
 		if(point.getX() > 50  && point.getX() < 350 && 
@@ -48,7 +47,7 @@ public class PokemonController extends WindowController implements MouseListener
 					//then pokemon will be created here
 		}
 		
-	}
+	} */
 	
 	public void setP1Name(){
 		
