@@ -16,9 +16,10 @@ import java.awt.event.ActionEvent;
 
 public class PokeFrame extends JFrame {
 	
-	private JPanel contentPane;
-
-	String P1Name, P2Name;
+	private JPanel homeScreen;
+	private JPanel bsHomeScreen;
+	private CanvasController c1;
+	
 	
 	private static int width = 750;
 	private static int height = 500;
@@ -35,7 +36,7 @@ public class PokeFrame extends JFrame {
 					frame.setVisible(true);
 					frame.setSize(width, height);
 					frame.setResizable(false);
-					frame.setBackground(new Color(205, 205, 205));
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -45,8 +46,6 @@ public class PokeFrame extends JFrame {
 	
 	public void begin(){
 		
-		
-		
 	}
 
 	/**
@@ -55,54 +54,35 @@ public class PokeFrame extends JFrame {
 	public PokeFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, width, height);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		homeScreen = new JPanel();
+		homeScreen.setBackground(new Color(205, 205, 205));
+		homeScreen.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(homeScreen);
 		
 		JButton battleSim = new JButton("Battle Simulator");
-		battleSim.setBounds(50, 300, 300, 80);
+		battleSim.setBounds(120, 305, 120, 75);
 		battleSim.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setP1Name();
-				setP2Name();
-				drawBSmain();
+				JPanel bsHomeScreen = new bsHomeScreen();
+				setContentPane(bsHomeScreen);
+				bsHomeScreen.revalidate();
+				bsHomeScreen.repaint();
 			}
 		});
-		contentPane.add(battleSim, BorderLayout.WEST);
+		homeScreen.setLayout(null);
+		homeScreen.add(battleSim);
 
 		JButton campaign = new JButton("Campaign");
-		campaign.setBounds(400, 300, 300, 80);
+		campaign.setBounds(510, 305, 120, 75);
 		campaign.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
-				drawCmain();
+		
 			}
 		});
-		contentPane.add(campaign, BorderLayout.EAST);
+		homeScreen.add(campaign);
 
 	}
 	
-	public void setP1Name(){
-		
-		P1Name =  JOptionPane.showInputDialog(null, "Player 1 Name:");
-	    
-	}
-	public void setP2Name(){
-		
-		P2Name =  JOptionPane.showInputDialog(null, "Player 2 Name:");
-	    
-	}
-	
-	private void drawBSmain() {
-		
-		//Text pokeSelection = new Text("Select Your Pokemon!", 300, 30);
-		
-	}
-	
-	private void drawCmain(){
-		
-		
-		
-	}
+
 
 }
