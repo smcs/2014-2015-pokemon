@@ -66,7 +66,7 @@ public class BattleSimulator {
 			}
 		}
 		
-			if (moveType == Fairy){
+		if (moveType == Fairy){
 			if (defendingPokemonType1 == Fire || defendingPokemonType2 == Fire){
 				effectiveness = effectiveness * .5;
 			}
@@ -189,6 +189,27 @@ public class BattleSimulator {
 			}
 		}
 		
+		if (moveType == Flying){
+			
+			if (defendingPokemonType1 == Electric || defendingPokemonType2 == Electric){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Rock || defendingPokemonType2 == Rock){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Steel || defendingPokemonType2 == Steel){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Bug || defendingPokemonType2 == Bug){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Fighting || defendingPokemonType2 == Fighting){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Grass || defendingPokemonType2 == Grass){
+				effectiveness = effectiveness * 2;
+			}
+		}
 		return effectiveness;
 	}
 	*/
