@@ -15,6 +15,29 @@ public class BattleSimulator {
 		//Pokemon P2poke = new Pokemon(blah blah);
 	}
 	
+	/*public int damageCalculator(int Level, int Attack, int Defense, int BasePower, Type moveType, Type defendingPokemonType1, Type defendingPokemonType2, Type attackingPokemonType1, Type attackingPokemonType2){
+		int effectiveness = typeEffectivenessCalculator(Type moveType, Type defendingPokemonType1, Type defendingPokemonType2);
+		double STAB = public double stabCalculator(Type moveType, Type attackingPokemonType1, Type attackingPokemonType2);
+		
+		int Damage = (((((2 * Level) + 10)/250) * (Attack/Defense) * BasePower) + 2) 
+		* STAB * effectiveness * Critical * Other * random(.85,1);
+	
+		return Damage
+	}
+	Notes: Level is level of attacking Pokemon
+	*/
+	
+	//-----------------------------------------------------------------------------------------------------------------
+	
+	/* public double stabCalculator(Type moveType, Type attackingPokemonType1, Type attackingPokemonType2){
+	   double STAB = 1 
+	 	if (moveType == attackingPokemonType1 || moveType == attackingPokemonType2){
+	 		STAB = 1.5;
+	 	}
+	  }
+	  return STAB;
+	 */
+	
 	/*public int typeEffectivenessCalculator(Type moveType, Type defendingPokemonType1, Type defendingPokemonType2){
 		int effectiveness = 1;
 		
