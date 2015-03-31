@@ -285,6 +285,154 @@ public class BattleSimulator {
 				effectiveness = effectiveness * 2;
 			}
 		}
+		
+		if (moveType == Steel){
+			if (defendingPokemonType1 == Electric || defendingPokemonType2 == Electric){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fire || defendingPokemonType2 == Fire){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Steel || defendingPokemonType2 == Steel){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Water || defendingPokemonType2 == Water){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fairy || defendingPokemonType2 == Fairy){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Ice || defendingPokemonType2 == Ice){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Rock || defendingPokemonType2 == Rock){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
+		if (moveType == Ice){
+			if (defendingPokemonType1 == Fire || defendingPokemonType2 == Fire){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Ice || defendingPokemonType2 == Ice){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Steel || defendingPokemonType2 == Steel){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Water || defendingPokemonType2 == Water){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Dragon || defendingPokemonType2 == Dragon){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Flying || defendingPokemonType2 == Flying){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Grass || defendingPokemonType2 == Grass){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Ground || defendingPokemonType2 == Ground){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
+		if (moveType == Dragon){
+			if (defendingPokemonType1 == Fairy || defendingPokemonType2 == Fairy){
+				effectiveness = effectiveness * 0;
+			}
+			if (defendingPokemonType1 == Steel || defendingPokemonType2 == Steel){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Dragon || defendingPokemonType2 == Dragon){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
+		if (moveType == Bug){
+			if (defendingPokemonType1 == Fairy || defendingPokemonType2 == Fairy){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fighting || defendingPokemonType2 == Fighting){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fire || defendingPokemonType2 == Fire){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Flying || defendingPokemonType2 == Flying){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Ghost || defendingPokemonType2 == Ghost){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Poison || defendingPokemonType2 == Poison){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Steel || defendingPokemonType2 == Steel){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Dark || defendingPokemonType2 == Dark){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Grass || defendingPokemonType2 == Grass){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Psychic || defendingPokemonType2 == Psychic){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
+		if (moveType == Psychic){
+			if (defendingPokemonType1 == Dark || defendingPokemonType2 == Dark){
+				effectiveness = effectiveness * 0;
+			}
+			if (defendingPokemonType1 == Psychic || defendingPokemonType2 == Psychic){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Steel || defendingPokemonType2 == Steel){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fighting || defendingPokemonType2 == Fighting){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Poison || defendingPokemonType2 == Poison){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
+		if (moveType == Ghost){
+			if (defendingPokemonType1 == Normal || defendingPokemonType2 == Normal){
+				effectiveness = effectiveness * 0;
+			}
+			if (defendingPokemonType1 == Dark || defendingPokemonType2 == Dark){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Ghost || defendingPokemonType2 == Ghost){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Psychic || defendingPokemonType2 == Psychic){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
+		if (moveType == Dark){
+			if (defendingPokemonType1 == Dark || defendingPokemonType2 == Dark){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fairy || defendingPokemonType2 == Fairy){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Fighting || defendingPokemonType2 == Fighting){
+				effectiveness = effectiveness * .5;
+			}
+			if (defendingPokemonType1 == Ghost || defendingPokemonType2 == Ghost){
+				effectiveness = effectiveness * 2;
+			}
+			if (defendingPokemonType1 == Psychic || defendingPokemonType2 == Psychic){
+				effectiveness = effectiveness * 2;
+			}
+		}
+		
 		return effectiveness;
 	}
 	*/
