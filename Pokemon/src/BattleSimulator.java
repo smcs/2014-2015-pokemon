@@ -22,15 +22,24 @@ public class BattleSimulator {
 		double Damage = (((((2 * Level) + 10)/250) * (Attack/Defense) * BasePower) + 2) 
 		* STAB * effectiveness * Critical * Other * random(.85,1);
 	
-		return math.round(Damage);
+		return floor(Damage);
 	}
 	Notes: Level is level of attacking Pokemon
 	*/
 	
-	
-	
-	
-	
+	/*public double critCalculator(){
+		
+		double Critical = 1;
+		
+		boolean didItCrit = false;
+		
+		if (didItCrit == true){
+			Critical = 1.5;
+		}
+		
+	 	return Critical;
+	 }
+	*/
 	//-----------------------------------------------------------------------------------------------------------------
 	
 	public double stabCalculator(Type moveType, Type attackingPokemonType1, Type attackingPokemonType2){
