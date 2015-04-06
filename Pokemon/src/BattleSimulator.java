@@ -18,20 +18,24 @@ public class BattleSimulator {
 	/*public double damageCalculator(int Level, int Attack, int Defense, int BasePower, Type moveType, Type defendingPokemonType1, Type defendingPokemonType2, Type attackingPokemonType1, Type attackingPokemonType2){
 		double effectiveness = typeEffectivenessCalculator(moveType, defendingPokemonType1, defendingPokemonType2);
 		double STAB = stabCalculator(moveType, attackingPokemonType1, attackingPokemonType2);
+		double Critical = critCalculator();
 		
 		double Damage = (((((2 * Level) + 10)/250) * (Attack/Defense) * BasePower) + 2) 
-		* STAB * effectiveness * Critical * Other * random(.85,1);
+		* STAB * effectiveness * Critical * Weather * heldItem * Ability * Other * random(.85,1);
 	
-		return floor(Damage);
+		return Damage;
 	}
 	Notes: Level is level of attacking Pokemon
 	*/
 	
-	/*public double critCalculator(){
-		
+	public double critCalculator(){
+		double random = Math.random();
 		double Critical = 1;
-		
 		boolean didItCrit = false;
+		
+		if(random <= .0625){
+			didItCrit = true;
+		}
 		
 		if (didItCrit == true){
 			Critical = 1.5;
@@ -39,8 +43,7 @@ public class BattleSimulator {
 		
 	 	return Critical;
 	 }
-	*/
-	//-----------------------------------------------------------------------------------------------------------------
+	
 	
 	public double stabCalculator(Type moveType, Type attackingPokemonType1, Type attackingPokemonType2){
 	   double STAB = 1; 
