@@ -1,5 +1,6 @@
 import java.awt.Color;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 
 public class bsP1Choose extends JPanel {
@@ -18,7 +20,12 @@ public class bsP1Choose extends JPanel {
 	String P1Name;
 	private ButtonListener buttonListener;
 	
+	
 	public bsP1Choose() {
+		
+		//pokeList = new Vector<Poke>();
+		//pokeList.add(new Poke ("#001 Bulbasaur"));
+		
 		buttonListener = new ButtonListener(this);
 		setLayout(null);
 		setBounds(new Rectangle(0, 0, 750, 500));
@@ -28,7 +35,7 @@ public class bsP1Choose extends JPanel {
 		JComboBox P1Pokemon = new JComboBox();
 		P1Pokemon.setBounds(150, 100, 150, 50);
 		add(P1Pokemon);
-		P1Pokemon.addItem("Example");
+		//P1Pokemon.setModel(new DefaultComboBoxModel(pokeList));
 		
 		JComboBox P1PokeLvl = new JComboBox();
 		P1PokeLvl.setBounds(450, 100, 150, 50);
