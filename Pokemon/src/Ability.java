@@ -5,5 +5,6 @@ public class Ability {
 		
 	}
 	public static Ability Static;
+	public static Ability Levitate;
 	
 }

@@ -1,6 +1,10 @@
 import objectdraw.*;
 
 public class BattleSimulator {
+	
+	int weatherStatus = 0;
+	// 0 = clear, 1 = rain, 2 = sun, 3 = sandstorm, 4 = hail
+	int weatherCounter = 0;
 
 	public BattleSimulator(){
 		
@@ -15,18 +19,69 @@ public class BattleSimulator {
 		//Pokemon P2poke = new Pokemon(blah blah);
 	}
 	
-	/*public double damageCalculator(int Level, int Attack, int Defense, int BasePower, Type moveType, Type defendingPokemonType1, Type defendingPokemonType2, Type attackingPokemonType1, Type attackingPokemonType2){
-		double effectiveness = typeEffectivenessCalculator(moveType, defendingPokemonType1, defendingPokemonType2);
-		double STAB = stabCalculator(moveType, attackingPokemonType1, attackingPokemonType2);
+	public double damageCalculator(int Level, int Attack, int Defense, int BasePower, Type moveType, 
+	 Type defendingPokemonType1, Type defendingPokemonType2, Type attackingPokemonType1, Type attackingPokemonType2, 
+	 Item attackingPokemonItem, Item defendingPokemonItem, Ability attackingPokemonAbility, Ability defendingPokemonAbility){
+		
+		double effectiveness = typeEffectivenessCalculator (moveType, defendingPokemonType1, defendingPokemonType2);
+		double STAB = stabCalculator (moveType, attackingPokemonType1, attackingPokemonType2);
 		double Critical = critCalculator();
+		double heldItem = itemCalculator (attackingPokemonItem, defendingPokemonItem);
+		double abilityMod = abilityCalculator (attackingPokemonAbility, defendingPokemonAbility, moveType);
+		double Weather = 1;
+		double Other = 1;
 		
 		double Damage = (((((2 * Level) + 10)/250) * (Attack/Defense) * BasePower) + 2) 
-		* STAB * effectiveness * Critical * Weather * heldItem * Ability * Other * random(.85,1);
+		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other; //*Math.random();
 	
 		return Damage;
 	}
-	Notes: Level is level of attacking Pokemon
-	*/
+	//Notes: Level is level of attacking Pokemon
+	
+	public double weatherCalculator(Type moveType){
+		double Weather = 1;
+		
+		if(weatherStatus == 1 && moveType == Type.Water){
+			Weather = 1.5;
+		}
+		
+		if(weatherStatus == 1 && moveType == Type.Fire){
+			Weather = .5;
+		}
+		
+		if(weatherStatus == 2 && moveType == Type.Fire){
+			Weather = 1.5;
+		}
+		
+		if(weatherStatus == 2 && moveType == Type.Water){
+			Weather = .5;
+		}
+		
+		return Weather;
+	}
+	
+	
+	
+	public double abilityCalculator(Ability attackingPokemonAbility, Ability defendingPokemonAbility, Type moveType){
+		double abilityMod = 1;
+		
+		if (defendingPokemonAbility == Ability.Levitate && moveType == Type.Ground){
+			abilityMod = 0;
+		}
+		
+		return abilityMod;
+	}
+	
+	public double itemCalculator(Item attackingPokemonItem, Item defendingPokemonItem){
+		double heldItem = 1;
+		
+		if (attackingPokemonItem == Item.lifeOrb){
+			heldItem = 1.3;
+		}
+		
+		return heldItem;
+	}
+	
 	
 	public double critCalculator(){
 		double random = Math.random();
