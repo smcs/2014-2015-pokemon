@@ -28,11 +28,11 @@ public class BattleSimulator {
 		double Critical = critCalculator();
 		double heldItem = itemCalculator (attackingPokemonItem, defendingPokemonItem);
 		double abilityMod = abilityCalculator (attackingPokemonAbility, defendingPokemonAbility, moveType);
-		double Weather = 1;
+		double Weather = weatherCalculator(moveType);
 		double Other = 1;
 		
 		double Damage = (((((2 * Level) + 10)/250) * (Attack/Defense) * BasePower) + 2) 
-		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other; //*Math.random();
+		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other * (1 - (Math.random()) / (100/15));
 	
 		return Damage;
 	}
