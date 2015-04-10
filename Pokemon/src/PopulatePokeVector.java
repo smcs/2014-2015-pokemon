@@ -17,10 +17,12 @@ public class PopulatePokeVector {
 			String currentLine = reader.readLine();
 			pokeList.add(new Poke (currentLine));
 			
+			
 		}
-	
+		
 		reader.close();
 		return pokeList;
 		
 	}
+	
 }
