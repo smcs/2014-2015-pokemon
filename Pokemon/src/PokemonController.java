@@ -49,7 +49,7 @@ public class PokemonController extends WindowController implements MouseListener
 		
 	} */
 	
-	public void setP1Name(){
+	public void setPlayerName(){
 		
 		P1Name =  JOptionPane.showInputDialog(null, "Player 1 Name:");
 	    

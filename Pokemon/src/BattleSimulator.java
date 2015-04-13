@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 import objectdraw.*;
 
 public class BattleSimulator {
@@ -22,10 +24,16 @@ public class BattleSimulator {
 	int P2CritBoost = 0;
 	int P2EvasionBoost = 0;
 	
+	private Vector<Player> players = new Vector<Player>();
+	
 	public BattleSimulator(){
 		
 		
 		
+	}
+	
+	public addPlayer(Player p) {
+		players.add(p);
 	}
 	
 	public void createP1Pokemon(){

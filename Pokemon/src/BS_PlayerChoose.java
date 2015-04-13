@@ -15,13 +15,15 @@ import java.awt.event.ActionListener;
 import java.util.Vector;
 
 
-public class bsP1Choose extends JPanel {
+public class BS_PlayerChoose extends JPanel {
 
-	String P1Name;
 	private ButtonListener buttonListener;
+	private Player player;
+	private static int playerNumber = 1;
 	
-	
-	public bsP1Choose() {
+	public BS_PlayerChoose() {
+		
+		this.player = new Player();
 		
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		
@@ -226,13 +228,13 @@ public class bsP1Choose extends JPanel {
 		readyUp.setBounds(315, 440, 120, 30);
 		add(readyUp);
 		
-		setP1Name();
+		setPlayerName();
 		
 	}
 	
-	public void setP1Name(){
+	public void setPlayerName(){
 		
-		P1Name =  JOptionPane.showInputDialog(null, "Player 1 Name:");
+		player.setName(JOptionPane.showInputDialog(null, "Player " + playerNumber++ + " Name:"));
 	    
 	}
 }

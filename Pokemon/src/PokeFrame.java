@@ -63,7 +63,7 @@ public class PokeFrame extends JFrame {
 		buttonListener = new ButtonListener(homeScreen);
 		
 		JButton battleSim = new JButton("Battle Simulator");
-		buttonListener.registerScreen("Battle Simulator", bsP1Choose.class);
+		buttonListener.registerScreen("Battle Simulator", BS_PlayerChoose.class);
 		battleSim.addActionListener(buttonListener);
 		battleSim.setBounds(120, 305, 120, 75);
 		homeScreen.setLayout(null);
