@@ -6,6 +6,22 @@ public class BattleSimulator {
 	// 0 = clear, 1 = rain, 2 = sun, 3 = sandstorm, 4 = hail
 	int weatherCounter = 0;
 
+	int P1AttackBoost = 0;
+	int P1DefenseBoost = 0;
+	int P1SpAttackBoost = 0;
+	int P1SpDefenseBoost = 0;
+	int P1SpeedBoost = 0;
+	int P1CritBoost = 0;
+	int P1EvasionBoost = 0;
+	
+	int P2AttackBoost = 0;
+	int P2DefenseBoost = 0;
+	int P2SpAttackBoost = 0;
+	int P2SpDefenseBoost = 0;
+	int P2SpeedBoost = 0;
+	int P2CritBoost = 0;
+	int P2EvasionBoost = 0;
+	
 	public BattleSimulator(){
 		
 		
