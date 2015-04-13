@@ -10,23 +10,25 @@ import javax.swing.SwingUtilities;
 
 public class ButtonListener implements ActionListener {
 
-	private JPanel panel;
+	private BS_JPanel panel;
 	private Map<String, Class> screens;
+	private BattleSimulator battleSimulator;
 	
-	public ButtonListener(JPanel panel){
+	public ButtonListener(BS_JPanel panel, BattleSimulator battleSimulator){
 		this.panel = panel;
+		this.battleSimulator = battleSimulator;
 		screens = new HashMap<String, Class>();
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		try{
 			
-			JPanel temp = (JPanel) screens.get(e.getActionCommand()).newInstance();
+			BS_JPanel temp = (BS_JPanel) screens.get(e.getActionCommand()).newInstance();
 			
 			((JFrame) SwingUtilities.getWindowAncestor(panel)).setContentPane(temp);
 			temp.revalidate();
 			temp.repaint();
-			
+			temp.attachBattleSimulator(battleSimulator);
 			
 		} catch (Exception exc) {
 			exc.printStackTrace();

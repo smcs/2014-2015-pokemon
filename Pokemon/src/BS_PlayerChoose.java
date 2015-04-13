@@ -15,8 +15,9 @@ import java.awt.event.ActionListener;
 import java.util.Vector;
 
 
-public class BS_PlayerChoose extends JPanel {
+public class BS_PlayerChoose extends BS_JPanel {
 
+	private static final int MAX_PLAYERS = 2;
 	private ButtonListener buttonListener;
 	private Player player;
 	private static int playerNumber = 1;
@@ -27,7 +28,7 @@ public class BS_PlayerChoose extends JPanel {
 		
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		
-		buttonListener = new ButtonListener(this);
+		buttonListener = new ButtonListener(this, battleSimulator);
 		setLayout(null);
 		setBounds(new Rectangle(0, 0, 750, 500));
 		setBackground(new Color(205, 205, 205));
@@ -223,7 +224,12 @@ public class BS_PlayerChoose extends JPanel {
 		
 		
 		JButton readyUp = new JButton("Ready Up");
-		buttonListener.registerScreen("Ready Up", bsP2Choose.class);
+		if (playerNumber < MAX_PLAYERS) {
+			buttonListener.registerScreen("Ready Up", BS_PlayerChoose.class);
+		} else {
+			/* whatever happens after Player 2 */
+			buttonListener.registerScreen("Ready Up", BS_JPanel.class);
+		}
 		readyUp.addActionListener(buttonListener);
 		readyUp.setBounds(315, 440, 120, 30);
 		add(readyUp);

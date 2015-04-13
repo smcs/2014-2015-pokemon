@@ -19,6 +19,7 @@ public class PokeFrame extends JFrame {
 	private JPanel homeScreen;
 	private JPanel bsP1Choose, bsP2Choose;
 	private CanvasController c1;
+	private BattleSimulator battleSimulator;
 	
 	private ButtonListener buttonListener;
 	
@@ -60,7 +61,9 @@ public class PokeFrame extends JFrame {
 		homeScreen.setBackground(new Color(205, 205, 205));
 		homeScreen.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(homeScreen);
-		buttonListener = new ButtonListener(homeScreen);
+		battleSimulator = new BattleSimulator();
+		buttonListener = new ButtonListener(homeScreen, battleSimulator);
+		
 		
 		JButton battleSim = new JButton("Battle Simulator");
 		buttonListener.registerScreen("Battle Simulator", BS_PlayerChoose.class);
