@@ -23,8 +23,7 @@ public class bsP1Choose extends JPanel {
 	
 	public bsP1Choose() {
 		
-		PopulatePokeVector getPokeList;
-		Vector pokeList = new Vector<Poke>();
+		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		
 		buttonListener = new ButtonListener(this);
 		setLayout(null);
