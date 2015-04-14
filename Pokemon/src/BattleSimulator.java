@@ -15,6 +15,7 @@ public class BattleSimulator {
 	int P1SpeedBoost = 0;
 	int P1CritBoost = 0;
 	int P1EvasionBoost = 0;
+	int P1AccuracyBoost = 0;
 	
 	int P2AttackBoost = 0;
 	int P2DefenseBoost = 0;
@@ -23,6 +24,7 @@ public class BattleSimulator {
 	int P2SpeedBoost = 0;
 	int P2CritBoost = 0;
 	int P2EvasionBoost = 0;
+	int P2AccuracyBoost = 0;
 	
 	private Vector<Player> players = new Vector<Player>();
 	
@@ -43,24 +45,111 @@ public class BattleSimulator {
 		//Pokemon P2poke = new Pokemon(blah blah);
 	}
 	
+	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
+		boolean hit = false;
+		int hitBoost = accuracyBoost - evasionBoost;
+		double hitMod;
+		if(hitBoost <= -6){
+			hitMod = 3/9;
+		}
+		if(Boost == -5){
+			Booster = 1/3.5;
+		}
+		if(Boost == -4){
+			Booster = 1/3;
+		}
+		if(Boost == -3){
+			Booster = 1/2.5;
+		}
+		if(Boost == -2){
+			Booster = 1/2;
+		}
+		if(Boost == -1){
+			Booster = 1/1.5;
+		}
+		if(Boost == 1){
+			Booster = 1.5;
+		}
+		if(Boost == 2){
+			Booster = 2;
+		}
+		if(Boost == 3){
+			Booster = 2.5;
+		}
+		if(Boost == 4){
+			Booster = 3;
+		}
+		if(Boost == 5){
+			Booster = 3.5;
+		}
+		if(Boost >= 6){
+			Booster = 4;
+		}
+		
+		return hit;
+	} 
+	
 	public double damageCalculator(int Level, int Attack, int Defense, int BasePower, Type moveType, 
 	 Type defendingPokemonType1, Type defendingPokemonType2, Type attackingPokemonType1, Type attackingPokemonType2, 
-	 Item attackingPokemonItem, Item defendingPokemonItem, Ability attackingPokemonAbility, Ability defendingPokemonAbility){
+	 Item attackingPokemonItem, Item defendingPokemonItem, Ability attackingPokemonAbility, Ability defendingPokemonAbility,
+	 int attackBoost, int defenseBoost, int critBoost){
 		
 		double effectiveness = typeEffectivenessCalculator (moveType, defendingPokemonType1, defendingPokemonType2);
 		double STAB = stabCalculator (moveType, attackingPokemonType1, attackingPokemonType2);
-		double Critical = critCalculator();
+		double attackBooster = boostCalculator(attackBoost);
+		double defenseBooster = boostCalculator(defenseBoost);
+		double Critical = critCalculator(critBoost);
 		double heldItem = itemCalculator (attackingPokemonItem, defendingPokemonItem);
 		double abilityMod = abilityCalculator (attackingPokemonAbility, defendingPokemonAbility, moveType);
 		double Weather = weatherCalculator(moveType);
 		double Other = 1;
 		
-		double Damage = (((((2 * Level) + 10)/250) * (Attack/Defense) * BasePower) + 2) 
+		double Damage = (((((2 * Level) + 10)/250) * ((Attack*attackBooster)/(Defense * defenseBooster)) * BasePower) + 2) 
 		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other * (1 - (Math.random()) / (100/15));
 	
 		return Damage;
 	}
 	//Notes: Level is level of attacking Pokemon
+	public double boostCalculator(int Boost){
+		double Booster = 1;
+		if(Boost <= -6){
+			Booster = 1/4;
+		}
+		if(Boost == -5){
+			Booster = 1/3.5;
+		}
+		if(Boost == -4){
+			Booster = 1/3;
+		}
+		if(Boost == -3){
+			Booster = 1/2.5;
+		}
+		if(Boost == -2){
+			Booster = 1/2;
+		}
+		if(Boost == -1){
+			Booster = 1/1.5;
+		}
+		if(Boost == 1){
+			Booster = 1.5;
+		}
+		if(Boost == 2){
+			Booster = 2;
+		}
+		if(Boost == 3){
+			Booster = 2.5;
+		}
+		if(Boost == 4){
+			Booster = 3;
+		}
+		if(Boost == 5){
+			Booster = 3.5;
+		}
+		if(Boost >= 6){
+			Booster = 4;
+		}
+		return Booster;
+	}
 	
 	public double weatherCalculator(Type moveType){
 		double Weather = 1;
@@ -84,8 +173,6 @@ public class BattleSimulator {
 		return Weather;
 	}
 	
-	
-	
 	public double abilityCalculator(Ability attackingPokemonAbility, Ability defendingPokemonAbility, Type moveType){
 		double abilityMod = 1;
 		
@@ -106,23 +193,29 @@ public class BattleSimulator {
 		return heldItem;
 	}
 	
-	
-	public double critCalculator(){
+	public double critCalculator(int critBoost){
 		double random = Math.random();
 		double Critical = 1;
 		boolean didItCrit = false;
 		
-		if(random <= .0625){
+		if(random <= .0625 && critBoost == 0){
 			didItCrit = true;
 		}
-		
+		if(random <= .125 && critBoost == 1){
+			didItCrit = true;
+		}
+		if(random <= .5 && critBoost == 2){
+			didItCrit = true;
+		}
+		if(critBoost >= 3){
+			didItCrit = true;
+		}
 		if (didItCrit == true){
 			Critical = 1.5;
 		}
 		
 	 	return Critical;
 	 }
-	
 	
 	public double stabCalculator(Type moveType, Type attackingPokemonType1, Type attackingPokemonType2){
 	   double STAB = 1; 
@@ -132,7 +225,6 @@ public class BattleSimulator {
 	 	 return STAB;
 	  }
 	 
-	
 	public double typeEffectivenessCalculator(Type moveType, Type defendingPokemonType1, Type defendingPokemonType2) {
 		
 		double effectiveness = 1;
