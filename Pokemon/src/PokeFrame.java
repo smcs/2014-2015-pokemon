@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
 
 public class PokeFrame extends JFrame {
 	
-	private JPanel homeScreen;
+	private BS_JPanel homeScreen;
 	private JPanel bsP1Choose, bsP2Choose;
 	private CanvasController c1;
 	private BattleSimulator battleSimulator;
@@ -57,7 +57,7 @@ public class PokeFrame extends JFrame {
 	public PokeFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, width, height);
-		homeScreen = new JPanel();
+		homeScreen = new BS_JPanel();
 		homeScreen.setBackground(new Color(205, 205, 205));
 		homeScreen.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(homeScreen);
@@ -71,7 +71,6 @@ public class PokeFrame extends JFrame {
 		battleSim.setBounds(120, 305, 120, 75);
 		homeScreen.setLayout(null);
 		homeScreen.add(battleSim);
-
 		JButton campaign = new JButton("Campaign");
 		//buttonListener.registerScreen("Campaign", campaignStart);
 		campaign.addActionListener(buttonListener);

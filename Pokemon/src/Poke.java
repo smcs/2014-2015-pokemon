@@ -28,7 +28,7 @@ public class Poke {
 			
 			BufferedReader reader;
 			try {
-				reader = new BufferedReader(new FileReader("PokemonList.txt"));
+				reader = new BufferedReader(new FileReader("PokeList.txt"));
 				while(reader.ready()) {
 					
 					String currentLine = reader.readLine();
