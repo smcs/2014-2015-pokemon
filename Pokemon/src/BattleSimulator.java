@@ -86,7 +86,7 @@ public class BattleSimulator {
 			hitMod = 9/3;
 		}
 		
-		if(Math.random() >= (Accuracy * hitMod)){
+		if(Math.random() <= (Accuracy * hitMod)){
 			hit = true;
 		}
 		
@@ -114,6 +114,7 @@ public class BattleSimulator {
 		return Damage;
 	}
 	//Notes: Level is level of attacking Pokemon
+	
 	public double boostCalculator(int Boost){
 		double Booster = 1;
 		if(Boost <= -6){
