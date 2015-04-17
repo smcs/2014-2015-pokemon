@@ -52,38 +52,42 @@ public class BattleSimulator {
 		if(hitBoost <= -6){
 			hitMod = 3/9;
 		}
-		if(Boost == -5){
-			Booster = 1/3.5;
+		if(hitBoost == -5){
+			hitMod = 1/3.5;
 		}
-		if(Boost == -4){
-			Booster = 1/3;
+		if(hitBoost == -4){
+			hitMod = 1/3;
 		}
-		if(Boost == -3){
-			Booster = 1/2.5;
+		if(hitBoost == -3){
+			hitMod = 1/2.5;
 		}
-		if(Boost == -2){
-			Booster = 1/2;
+		if(hitBoost == -2){
+			hitMod = 1/2;
 		}
-		if(Boost == -1){
-			Booster = 1/1.5;
+		if(hitBoost == -1){
+			hitMod = 1/1.5;
 		}
-		if(Boost == 1){
-			Booster = 1.5;
+		if(hitBoost == 1){
+			hitMod = 1.5;
 		}
-		if(Boost == 2){
-			Booster = 2;
+		if(hitBoost == 2){
+			hitMod = 2;
 		}
-		if(Boost == 3){
-			Booster = 2.5;
+		if(hitBoost == 3){
+			hitMod = 2.5;
 		}
-		if(Boost == 4){
-			Booster = 3;
+		if(hitBoost == 4){
+			hitMod = 3;
 		}
-		if(Boost == 5){
-			Booster = 3.5;
+		if(hitBoost == 5){
+			hitMod = 3.5;
 		}
-		if(Boost >= 6){
-			Booster = 4;
+		if(hitBoost >= 6){
+			hitMod = 4;
+		}
+		
+		if(Math.random() >= (Accuracy * hitMod)){
+			hit = true;
 		}
 		
 		return hit;
