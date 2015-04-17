@@ -48,42 +48,42 @@ public class BattleSimulator {
 	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
 		boolean hit = false;
 		int hitBoost = accuracyBoost - evasionBoost;
-		double hitMod;
+		double hitMod = 1;
 		if(hitBoost <= -6){
 			hitMod = 3/9;
 		}
 		if(hitBoost == -5){
-			hitMod = 1/3.5;
+			hitMod = 3/8;
 		}
 		if(hitBoost == -4){
-			hitMod = 1/3;
+			hitMod = 3/7;
 		}
 		if(hitBoost == -3){
-			hitMod = 1/2.5;
+			hitMod = 3/6;
 		}
 		if(hitBoost == -2){
-			hitMod = 1/2;
+			hitMod = 3/5;
 		}
 		if(hitBoost == -1){
-			hitMod = 1/1.5;
+			hitMod = 3/4;
 		}
 		if(hitBoost == 1){
-			hitMod = 1.5;
+			hitMod = 4/3;
 		}
 		if(hitBoost == 2){
-			hitMod = 2;
+			hitMod = 5/3;
 		}
 		if(hitBoost == 3){
-			hitMod = 2.5;
+			hitMod = 6/3;
 		}
 		if(hitBoost == 4){
-			hitMod = 3;
+			hitMod = 7/3;
 		}
 		if(hitBoost == 5){
-			hitMod = 3.5;
+			hitMod = 8/3;
 		}
 		if(hitBoost >= 6){
-			hitMod = 4;
+			hitMod = 9/3;
 		}
 		
 		if(Math.random() >= (Accuracy * hitMod)){
