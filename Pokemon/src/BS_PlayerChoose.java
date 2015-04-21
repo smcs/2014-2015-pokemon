@@ -19,6 +19,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 	private static final int MAX_PLAYERS = 2;
 	private ButtonListener buttonListener;
+	private PanelListener panelListener;
 	private Player player;
 	private static int playerNumber = 1;
 	
@@ -29,6 +30,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		
 		buttonListener = new ButtonListener(this, battleSimulator);
+		panelListener = new PanelListener();
 		setLayout(null);
 		setBounds(new Rectangle(0, 0, 750, 500));
 		setBackground(new Color(205, 205, 205));
@@ -41,12 +43,15 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Pokemon1.setModel(new DefaultComboBoxModel(pokeList));
 		
 		JComboBox Poke1Lvl = new JComboBox();
+		Poke1Lvl.addActionListener(panelListener);
 		Poke1Lvl.setBounds(150, 50, 150, 50);
 		add(Poke1Lvl);
 		Poke1Lvl.addItem(null);
 		for(int i = 1; i <= 100; i++){
 			Poke1Lvl.addItem(i);
 		}
+		
+		//int level = Poke1Lvl.getSelectedIndex();
 		
 		JComboBox Poke1Move1 = new JComboBox();
 		Poke1Move1.setBounds(150, 80, 150, 50);
