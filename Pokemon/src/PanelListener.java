@@ -10,7 +10,7 @@ public class PanelListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 	
 		JComboBox cb = (JComboBox) e.getSource();
-		System.out.println(cb.getSelectedItem().toString());
+		System.out.println(cb.getSelectedIndex() + 1);
 		
 		
 	}
