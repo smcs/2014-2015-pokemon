@@ -24,6 +24,12 @@ public class BS_PlayerChoose extends BS_JPanel {
 	private static int playerNumber = 1;
 	private int storePokemon1, storePoke1Lvl = 0;
 	
+	private JComboBox Pokemon1;
+	
+	public int getPokemon1() {
+		return Pokemon1.getSelectedIndex();
+	}
+	
 	public BS_PlayerChoose() {
 		
 		this.player = new Player();
@@ -38,7 +44,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 		
 		//begin player 1 first pokemon creation
 		
-		JComboBox Pokemon1 = new JComboBox();
+		Pokemon1 = new JComboBox();
 		Pokemon1.addActionListener(panelListener);
 		Pokemon1.setBounds(150, 20, 150, 50);
 		add(Pokemon1);
@@ -293,7 +299,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 	public void setPokemon() {
 
-		if(storePokemon1 != 0 && storePoke1Lvl != 0 /*&& storePoke1Move1 != 0 
+		if(getPokemon1() != 0 && storePoke1Lvl != 0 /*&& storePoke1Move1 != 0 
 			&& storePoke1Move2 != 0 && storePoke1Move3 != 0 && storePoke1Move4 != 0*/){
 			System.out.println("OOH RAH");
 		}
