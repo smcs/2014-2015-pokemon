@@ -11,7 +11,7 @@ public class PanelListener implements ActionListener{
 	
 		JComboBox cb = (JComboBox) e.getSource();
 		System.out.println(cb.getSelectedIndex() + 1);
-		
+		BS_PlayerChoose.setPokemon();
 		
 	}
 
