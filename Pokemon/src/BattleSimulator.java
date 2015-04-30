@@ -59,6 +59,10 @@ public class BattleSimulator {
 		return HP;
 	}
 	
+	public double natureCalculator(int Stat){
+		
+	}
+	
 	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
 		boolean hit = false;
 		int hitBoost = accuracyBoost - evasionBoost;
