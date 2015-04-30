@@ -291,7 +291,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 	    
 	}
 
-	public static void setPokemon() {
+	public void setPokemon() {
 
 		if(storePokemon1 != 0 && storePoke1Lvl != 0 /*&& storePoke1Move1 != 0 
 			&& storePoke1Move2 != 0 && storePoke1Move3 != 0 && storePoke1Move4 != 0*/){
