@@ -22,7 +22,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 	private PanelListener panelListener;
 	private Player player;
 	private static int playerNumber = 1;
-	private int storePokemon1, storePoke1Lvl;
+	private int storePokemon1, storePoke1Lvl = 0;
 	
 	public BS_PlayerChoose() {
 		
