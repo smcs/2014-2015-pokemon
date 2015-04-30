@@ -59,7 +59,8 @@ public class BattleSimulator {
 		return HP;
 	}
 	
-	public double natureCalculator(int Stat){
+	// statType: 0 == Attack, 1 == Defense, 2 == Sp.Attack, 3 == Sp.Defense, 4 == Speed
+	public double natureCalculator(int Stat, Nature Nature, int statType){
 		
 	}
 	
