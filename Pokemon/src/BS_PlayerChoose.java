@@ -31,7 +31,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		
 		buttonListener = new ButtonListener(this, battleSimulator);
-		panelListener = new PanelListener();
+		panelListener = new PanelListener(this);
 		setLayout(null);
 		setBounds(new Rectangle(0, 0, 750, 500));
 		setBackground(new Color(205, 205, 205));
