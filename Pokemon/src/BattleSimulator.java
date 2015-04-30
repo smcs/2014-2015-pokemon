@@ -45,6 +45,20 @@ public class BattleSimulator {
 		//Pokemon P2poke = new Pokemon(blah blah);
 	}
 	
+	public double statCalculator(int Base, int IV, int EV, int Level){
+		double Stat;
+		Stat = ((IV + (2*Base) + (EV/4)) * (Level/100)) + 5;
+		Math.floor(Stat);
+		return Stat;
+	}
+	
+	public double hpCalculator(int Base, int IV, int EV, int Level){
+		double HP;
+		HP = ((IV + (2*Base) + (EV/4) + 100) * (Level/100)) + 10;
+		Math.floor(HP);
+		return HP;
+	}
+	
 	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
 		boolean hit = false;
 		int hitBoost = accuracyBoost - evasionBoost;
@@ -110,7 +124,9 @@ public class BattleSimulator {
 		
 		double Damage = (((((2 * Level) + 10)/250) * ((Attack*attackBooster)/(Defense * defenseBooster)) * BasePower) + 2) 
 		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other * (1 - (Math.random()) / (100/15));
-	
+		
+		Math.floor(Damage);
+		
 		return Damage;
 	}
 	//Notes: Level is level of attacking Pokemon
