@@ -59,8 +59,18 @@ public class BattleSimulator {
 		return HP;
 	}
 	
-	public double natureCalculator(int Stat){
+	// statType: 0 == Attack, 1 == Defense, 2 == Sp.Attack, 3 == Sp.Defense, 4 == Speed
+	public double natureCalculator(int Stat, Nature Nat, int statType){
+		double stat = Stat;
+
+		if(statType == 0 && ((Nat == Nature.Lonely) || (Nat == Nature.Brave) || (Nat == Nature.Adamant) || (Nat == Nature.Naughty))){
+			stat = stat * 1.1;
+		}
+		if(statType == 0 && ((Nat == Nature.Bold) || (Nat == Nature.Timid) || (Nat == Nature.Modest) || (Nat == Nature.Calm))){
+			stat = stat * .9;
+		}
 		
+		return stat;
 	}
 	
 	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
