@@ -31,7 +31,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		
 		buttonListener = new ButtonListener(this, battleSimulator);
-		panelListener = new PanelListener();
+		panelListener = new PanelListener(this);
 		setLayout(null);
 		setBounds(new Rectangle(0, 0, 750, 500));
 		setBackground(new Color(205, 205, 205));
@@ -291,7 +291,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 	    
 	}
 
-	public static void setPokemon() {
+	public void setPokemon() {
 
 		if(storePokemon1 != 0 && storePoke1Lvl != 0 /*&& storePoke1Move1 != 0 
 			&& storePoke1Move2 != 0 && storePoke1Move3 != 0 && storePoke1Move4 != 0*/){
