@@ -335,11 +335,35 @@ public class BS_PlayerChoose extends BS_JPanel {
 	public int getPoke3Lvl(){
 		return Poke3Lvl.getSelectedIndex();
 	}
+	public int getPoke3Move1(){
+		return Poke3Move1.getSelectedIndex();
+	}
+	public int getPoke3Move2(){
+		return Poke3Move2.getSelectedIndex();
+	}
+	public int getPoke3Move3(){
+		return Poke3Move3.getSelectedIndex();
+	}
+	public int getPoke3Move4(){
+		return Poke3Move4.getSelectedIndex();
+	}
 	public int getPokemon4(){
 		return Pokemon4.getSelectedIndex();
 	}
 	public int getPoke4Lvl(){
 		return Poke4Lvl.getSelectedIndex();
+	}
+	public int getPoke4Move1(){
+		return Poke4Move1.getSelectedIndex();
+	}
+	public int getPoke4Move2(){
+		return Poke4Move2.getSelectedIndex();
+	}
+	public int getPoke4Move3(){
+		return Poke4Move3.getSelectedIndex();
+	}
+	public int getPoke4Move4(){
+		return Poke4Move4.getSelectedIndex();
 	}
 	public int getPokemon5(){
 		return Pokemon5.getSelectedIndex();
@@ -347,11 +371,35 @@ public class BS_PlayerChoose extends BS_JPanel {
 	public int getPoke5Lvl(){
 		return Poke5Lvl.getSelectedIndex();
 	}
+	public int getPoke5Move1(){
+		return Poke5Move1.getSelectedIndex();
+	}
+	public int getPoke5Move2(){
+		return Poke5Move2.getSelectedIndex();
+	}
+	public int getPoke5Move3(){
+		return Poke5Move3.getSelectedIndex();
+	}
+	public int getPoke5Move4(){
+		return Poke5Move4.getSelectedIndex();
+	}
 	public int getPokemon6(){
 		return Pokemon6.getSelectedIndex();
 	}
 	public int getPoke6Lvl(){
 		return Poke6Lvl.getSelectedIndex();
+	}
+	public int getPoke6Move1(){
+		return Poke6Move1.getSelectedIndex();
+	}
+	public int getPoke6Move2(){
+		return Poke6Move2.getSelectedIndex();
+	}
+	public int getPoke6Move3(){
+		return Poke6Move3.getSelectedIndex();
+	}
+	public int getPoke6Move4(){
+		return Poke6Move4.getSelectedIndex();
 	}
 	
 	public void setPlayerName(){
@@ -362,9 +410,29 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 	public void setPokemon() {
 
-		if(getPokemon1() != -1 && getPoke1Lvl() != -1 /*&& storePoke1Move1 != 0 
-			&& storePoke1Move2 != 0 && storePoke1Move3 != 0 && storePoke1Move4 != 0*/){
-			System.out.println("OOH RAH");
+		if(getPokemon1() != -1 && getPoke1Lvl() != -1 /*&& storePoke1Move1 != -1 
+			&& storePoke1Move2 != -1 && storePoke1Move3 != -1 && storePoke1Move4 != -1*/){
+				System.out.println("OOH RAH");
 		}
+		if(getPokemon2() != -1 && getPoke2Lvl() != -1 /*&& storePoke2Move1 != -1 
+			&& storePoke2Move2 != -1 && storePoke2Move3 != -1 && storePoke2Move4 != -1*/){
+				System.out.println("OOH RAH");
+			}
+		if(getPokemon3() != -1 && getPoke3Lvl() != -1 /*&& storePoke3Move1 != -1 
+			&& storePoke3Move2 != -1 && storePoke3Move3 != -1 && storePoke3Move4 != -1*/){
+				System.out.println("OOH RAH");
+			}
+		if(getPokemon4() != -1 && getPoke4Lvl() != -1 /*&& storePoke4Move1 != -1 
+			&& storePoke4Move2 != -1 && storePoke4Move3 != -1 && storePoke4Move4 != -1*/){
+				System.out.println("OOH RAH");
+			}
+		if(getPokemon5() != -1 && getPoke5Lvl() != -1 /*&& storePoke5Move1 != -1 
+			&& storePoke5Move2 != -1 && storePoke5Move3 != -1 && storePoke5Move4 != -1*/){
+				System.out.println("OOH RAH");
+			}
+		if(getPokemon6() != -1 && getPoke6Lvl() != -1 /*&& storePoke6Move1 != -1 
+			&& storePoke6Move2 != -1 && storePoke6Move3 != -1 && storePoke6Move4 != -1*/){
+				System.out.println("OOH RAH");
+			}
 	}
 }
