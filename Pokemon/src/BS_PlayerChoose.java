@@ -412,7 +412,11 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 		if(getPokemon1() != -1 && getPoke1Lvl() != -1 /*&& storePoke1Move1 != -1 
 			&& storePoke1Move2 != -1 && storePoke1Move3 != -1 && storePoke1Move4 != -1*/){
-				System.out.println("OOH RAH");
+				//System.out.println("OOH RAH");
+			Pokemon pokemon1 = new Pokemon(getPokemon1(), "Pokemon 1", null, null, null, 
+					getPoke1Lvl(), 0, null, false, false, 50, getPoke1Move1(), 
+					getPoke1Move2(), getPoke1Move3(), getPoke1Move4(),
+					20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 		}
 		if(getPokemon2() != -1 && getPoke2Lvl() != -1 /*&& storePoke2Move1 != -1 
 			&& storePoke2Move2 != -1 && storePoke2Move3 != -1 && storePoke2Move4 != -1*/){
