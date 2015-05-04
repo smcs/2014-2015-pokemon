@@ -69,7 +69,31 @@ public class BattleSimulator {
 		if(statType == 0 && ((Nat == Nature.Bold) || (Nat == Nature.Timid) || (Nat == Nature.Modest) || (Nat == Nature.Calm))){
 			stat = stat * .9;
 		}
-		
+		if(statType == 1 && ((Nat == Nature.Bold) || (Nat == Nature.Relaxed) || (Nat == Nature.Impish) || (Nat == Nature.Lax))){
+			stat = stat * 1.1;
+		}
+		if(statType == 1 && ((Nat == Nature.Lonely) || (Nat == Nature.Hasty) || (Nat == Nature.Mild) || (Nat == Nature.Gentle))){
+			stat = stat * .9;
+		}
+		if(statType == 2 && ((Nat == Nature.Modest) || (Nat == Nature.Mild) || (Nat == Nature.Quiet) || (Nat == Nature.Rash))){
+			stat = stat * 1.1;
+		}
+		if(statType == 2 && ((Nat == Nature.Adamant) || (Nat == Nature.Impish) || (Nat == Nature.Jolly) || (Nat == Nature.Careful))){
+			stat = stat * .9;
+		}
+		if(statType == 3 && ((Nat == Nature.Calm) || (Nat == Nature.Gentle) || (Nat == Nature.Sassy) || (Nat == Nature.Careful))){
+			stat = stat * 1.1;
+		}
+		if(statType == 3 && ((Nat == Nature.Naughty) || (Nat == Nature.Lax) || (Nat == Nature.Naive) || (Nat == Nature.Rash))){
+			stat = stat * .9;
+		}
+		if(statType == 4 && ((Nat == Nature.Timid) || (Nat == Nature.Hasty) || (Nat == Nature.Jolly) || (Nat == Nature.Naive))){
+			stat = stat * 1.1;
+		}
+		if(statType == 4 && ((Nat == Nature.Brave) || (Nat == Nature.Relaxed) || (Nat == Nature.Quiet) || (Nat == Nature.Sassy))){
+			stat = stat * .9;
+		}
+		Math.floor(stat);
 		return stat;
 	}
 	
