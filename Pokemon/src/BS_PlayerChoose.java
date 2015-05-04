@@ -37,6 +37,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 		this.player = new Player();
 		
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
+		Vector<Poke> moveList = Poke.PopulateMoveVector();
 		
 		buttonListener = new ButtonListener(this, battleSimulator);
 		panelListener = new PanelListener(this);
@@ -67,25 +68,25 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Poke1Move1.addActionListener(panelListener);
 		Poke1Move1.setBounds(150, 80, 150, 50);
 		add(Poke1Move1);
-		int storePoke1Move1 = Poke1Move1.getSelectedIndex();
+		Poke1Move1.setModel(new DefaultComboBoxModel(moveList));
 	
 		Poke1Move2 = new JComboBox();
 		Poke1Move2.addActionListener(panelListener);
 		Poke1Move2.setBounds(150, 110, 150, 50);
 		add(Poke1Move2);
-		int storePoke1Move2 = Poke1Move2.getSelectedIndex();
+		Poke1Move2.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke1Move3 = new JComboBox();
 		Poke1Move3.addActionListener(panelListener);
 		Poke1Move3.setBounds(150, 140, 150, 50);
 		add(Poke1Move3);
-		int storePoke1Move3 = Poke1Move3.getSelectedIndex();
+		Poke1Move3.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke1Move4 = new JComboBox();
 		Poke1Move4.addActionListener(panelListener);
 		Poke1Move4.setBounds(150, 170, 150, 50);
 		add(Poke1Move4);
-		int storePoke1Move4 = Poke1Move4.getSelectedIndex();
+		Poke1Move4.setModel(new DefaultComboBoxModel(moveList));
 		
 		
 		
@@ -110,21 +111,25 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Poke2Move1.addActionListener(panelListener);
 		Poke2Move1.setBounds(350, 80, 150, 50);
 		add(Poke2Move1);
+		Poke2Move1.setModel(new DefaultComboBoxModel(moveList));
 	
 		Poke2Move2 = new JComboBox();
 		Poke2Move2.addActionListener(panelListener);
 		Poke2Move2.setBounds(350, 110, 150, 50);
 		add(Poke2Move2);
+		Poke2Move2.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke2Move3 = new JComboBox();
 		Poke2Move3.addActionListener(panelListener);
 		Poke2Move3.setBounds(350, 140, 150, 50);
 		add(Poke2Move3);
+		Poke2Move3.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke2Move4 = new JComboBox();
 		Poke2Move4.addActionListener(panelListener);
 		Poke2Move4.setBounds(350, 170, 150, 50);
 		add(Poke2Move4);
+		Poke2Move4.setModel(new DefaultComboBoxModel(moveList));
 		
 		//begin player 1 third pokemon creation
 		
@@ -147,21 +152,25 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Poke3Move1.addActionListener(panelListener);
 		Poke3Move1.setBounds(550, 80, 150, 50);
 		add(Poke3Move1);
+		Poke3Move1.setModel(new DefaultComboBoxModel(moveList));
 	
 		Poke3Move2 = new JComboBox();
 		Poke3Move2.addActionListener(panelListener);
 		Poke3Move2.setBounds(550, 110, 150, 50);
 		add(Poke3Move2);
+		Poke3Move2.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke3Move3 = new JComboBox();
 		Poke3Move3.addActionListener(panelListener);
 		Poke3Move3.setBounds(550, 140, 150, 50);
 		add(Poke3Move3);
+		Poke3Move3.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke3Move4 = new JComboBox();
 		Poke3Move4.addActionListener(panelListener);
 		Poke3Move4.setBounds(550, 170, 150, 50);
 		add(Poke3Move4);
+		Poke3Move4.setModel(new DefaultComboBoxModel(moveList));
 		
 		//begin player 1 fourth pokemon creation
 		
@@ -184,21 +193,25 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Poke4Move1.addActionListener(panelListener);
 		Poke4Move1.setBounds(150, 290, 150, 50);
 		add(Poke4Move1);
+		Poke4Move1.setModel(new DefaultComboBoxModel(moveList));
 	
 		Poke4Move2 = new JComboBox();
 		Poke4Move2.addActionListener(panelListener);
 		Poke4Move2.setBounds(150, 320, 150, 50);
 		add(Poke4Move2);
+		Poke4Move2.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke4Move3 = new JComboBox();
 		Poke4Move3.addActionListener(panelListener);
 		Poke4Move3.setBounds(150, 350, 150, 50);
 		add(Poke4Move3);
+		Poke4Move3.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke4Move4 = new JComboBox();
 		Poke4Move4.addActionListener(panelListener);
 		Poke4Move4.setBounds(150, 380, 150, 50);
 		add(Poke4Move4);
+		Poke4Move4.setModel(new DefaultComboBoxModel(moveList));
 		
 		//begin player 1 fifth pokemon creation
 		
@@ -222,21 +235,25 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Poke5Move1.addActionListener(panelListener);
 		Poke5Move1.setBounds(350, 290, 150, 50);
 		add(Poke5Move1);
+		Poke5Move1.setModel(new DefaultComboBoxModel(moveList));
 	
 		Poke5Move2 = new JComboBox();
 		Poke5Move2.addActionListener(panelListener);
 		Poke5Move2.setBounds(350, 320, 150, 50);
 		add(Poke5Move2);
+		Poke5Move2.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke5Move3 = new JComboBox();
 		Poke5Move3.addActionListener(panelListener);
 		Poke5Move3.setBounds(350, 350, 150, 50);
 		add(Poke5Move3);
+		Poke5Move3.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke5Move4 = new JComboBox();
 		Poke5Move4.addActionListener(panelListener);
 		Poke5Move4.setBounds(350, 380, 150, 50);
 		add(Poke5Move4);
+		Poke5Move4.setModel(new DefaultComboBoxModel(moveList));
 		
 		//begin player 1 sixth pokemon creation
 		
@@ -260,21 +277,25 @@ public class BS_PlayerChoose extends BS_JPanel {
 		Poke6Move1.addActionListener(panelListener);
 		Poke6Move1.setBounds(550, 290, 150, 50);
 		add(Poke6Move1);
+		Poke6Move1.setModel(new DefaultComboBoxModel(moveList));
 	
 		Poke6Move2 = new JComboBox();
 		Poke6Move2.addActionListener(panelListener);
 		Poke6Move2.setBounds(550, 320, 150, 50);
 		add(Poke6Move2);
+		Poke6Move2.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke6Move3 = new JComboBox();
 		Poke6Move3.addActionListener(panelListener);
 		Poke6Move3.setBounds(550, 350, 150, 50);
 		add(Poke6Move3);
+		Poke6Move3.setModel(new DefaultComboBoxModel(moveList));
 		
 		Poke6Move4 = new JComboBox();
 		Poke6Move4.addActionListener(panelListener);
 		Poke6Move4.setBounds(550, 380, 150, 50);
 		add(Poke6Move4);
+		Poke6Move4.setModel(new DefaultComboBoxModel(moveList));
 		
 		
 		
@@ -410,33 +431,53 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 	public void setPokemon() {
 
-		if(getPokemon1() != -1 && getPoke1Lvl() != -1 /*&& storePoke1Move1 != -1 
-			&& storePoke1Move2 != -1 && storePoke1Move3 != -1 && storePoke1Move4 != -1*/){
-				//System.out.println("OOH RAH");
-			Pokemon pokemon1 = new Pokemon(getPokemon1(), "Pokemon 1", null, null, null, 
-					getPoke1Lvl(), 0, null, false, false, 50, getPoke1Move1(), 
+		if(getPokemon1() != -1 && getPoke1Lvl() != -1 && getPoke1Move1() != -1 
+			&& getPoke1Move2() != -1 && getPoke1Move3() != -1 && getPoke1Move4() != -1){
+				System.out.println("Pokemon 1 Generated");
+			Pokemon pokemon1 = new Pokemon(getPokemon1(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+					getPoke1Lvl(), 0, 0, false, false, 50, getPoke1Move1(), 
 					getPoke1Move2(), getPoke1Move3(), getPoke1Move4(),
 					20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 		}
-		if(getPokemon2() != -1 && getPoke2Lvl() != -1 /*&& storePoke2Move1 != -1 
-			&& storePoke2Move2 != -1 && storePoke2Move3 != -1 && storePoke2Move4 != -1*/){
-				System.out.println("OOH RAH");
+		if(getPokemon2() != -1 && getPoke2Lvl() != -1 && getPoke2Move1() != -1 
+				&& getPoke2Move2() != -1 && getPoke2Move3() != -1 && getPoke2Move4() != -1){
+					System.out.println("Pokemon 2 Generated");
+				Pokemon pokemon2 = new Pokemon(getPokemon2(), "Pokemon 2", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+						getPoke2Lvl(), 0, 0, false, false, 50, getPoke2Move1(), 
+						getPoke2Move2(), getPoke2Move3(), getPoke2Move4(),
+						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon3() != -1 && getPoke3Lvl() != -1 /*&& storePoke3Move1 != -1 
-			&& storePoke3Move2 != -1 && storePoke3Move3 != -1 && storePoke3Move4 != -1*/){
-				System.out.println("OOH RAH");
+		if(getPokemon3() != -1 && getPoke3Lvl() != -1 && getPoke3Move1() != -1 
+				&& getPoke3Move2() != -1 && getPoke3Move3() != -1 && getPoke3Move4() != -1){
+					System.out.println("Pokemon 3 Generated");
+				Pokemon pokemon3 = new Pokemon(getPokemon3(), "Pokemon3", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+						getPoke3Lvl(), 0, 0, false, false, 50, getPoke3Move1(), 
+						getPoke3Move2(), getPoke3Move3(), getPoke3Move4(),
+						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon4() != -1 && getPoke4Lvl() != -1 /*&& storePoke4Move1 != -1 
-			&& storePoke4Move2 != -1 && storePoke4Move3 != -1 && storePoke4Move4 != -1*/){
-				System.out.println("OOH RAH");
+		if(getPokemon4() != -1 && getPoke4Lvl() != -1 && getPoke4Move1() != -1 
+				&& getPoke4Move2() != -1 && getPoke4Move3() != -1 && getPoke4Move4() != -1){
+					System.out.println("Pokemon 4 Generated");
+				Pokemon pokemon4 = new Pokemon(getPokemon4(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+						getPoke4Lvl(), 0, 0, false, false, 50, getPoke4Move1(), 
+						getPoke4Move2(), getPoke4Move3(), getPoke4Move4(),
+						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon5() != -1 && getPoke5Lvl() != -1 /*&& storePoke5Move1 != -1 
-			&& storePoke5Move2 != -1 && storePoke5Move3 != -1 && storePoke5Move4 != -1*/){
-				System.out.println("OOH RAH");
+		if(getPokemon5() != -1 && getPoke5Lvl() != -1 && getPoke5Move1() != -1 
+				&& getPoke5Move2() != -1 && getPoke5Move3() != -1 && getPoke5Move4() != -1){
+					System.out.println("Pokemon 5 Generated");
+				Pokemon pokemon5 = new Pokemon(getPokemon5(), "Pokemon 5", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+						getPoke5Lvl(), 0, 0, false, false, 50, getPoke5Move1(), 
+						getPoke5Move2(), getPoke5Move3(), getPoke5Move4(),
+						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon6() != -1 && getPoke6Lvl() != -1 /*&& storePoke6Move1 != -1 
-			&& storePoke6Move2 != -1 && storePoke6Move3 != -1 && storePoke6Move4 != -1*/){
-				System.out.println("OOH RAH");
+		if(getPokemon6() != -1 && getPoke6Lvl() != -1 && getPoke6Move1() != -1 
+				&& getPoke6Move2() != -1 && getPoke6Move3() != -1 && getPoke6Move4() != -1){
+					System.out.println("Pokemon 6 Generated");
+				Pokemon pokemon6 = new Pokemon(getPokemon6(), "Pokemon 6", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+						getPoke6Lvl(), 0, 0, false, false, 50, getPoke6Move1(), 
+						getPoke6Move2(), getPoke6Move3(), getPoke6Move4(),
+						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
 	}
 }

@@ -3,7 +3,7 @@ public class Pokemon {
 	
 	public Pokemon (int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			int Status, boolean confused, boolean Gender, int CatchRate,
-			Move Move1, Move Move2, Move Move3, Move Move4, 
+			int Move1, int Move2, int Move3, int Move4, 
 			int Hiv, int Hev, 
 			int Atkiv, int Atkev,
 			int Defiv, int Defev,

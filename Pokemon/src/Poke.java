@@ -9,6 +9,7 @@ public class Poke {
 
 	private String name;
 	private static Vector<Poke> pokeList;
+	private static Vector<Poke> moveList;
 	
 	public Poke(String name){
 		
@@ -48,5 +49,43 @@ public class Poke {
 		return pokeList;
 		
 	}
+	
+	
+	
+	
+	
+	public static Vector<Poke> PopulateMoveVector() {
+		/* only load the pokelist if its currently empty */
+		if (moveList == null) {
+			moveList = new Vector<Poke>();
+			
+			BufferedReader reader;
+			try {
+				reader = new BufferedReader(new FileReader("PokemonMove.txt"));
+				while(reader.ready()) {
+					
+					String currentLine = reader.readLine();
+					moveList.add(new Poke (currentLine));
+					
+					
+				}
+				reader.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.exit(0);
+			}
+			
+			
+		}
+		return moveList;
+		
+	}
+	
+	
+	
+	
+	
+	
 
 }
