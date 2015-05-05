@@ -431,8 +431,8 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 	public void setPokemon() {
 
-		if(getPokemon1() != -1 && getPoke1Lvl() != -1 && getPoke1Move1() != -1 
-			&& getPoke1Move2() != -1 && getPoke1Move3() != -1 && getPoke1Move4() != -1){
+		if(getPokemon1() != 0 && getPoke1Lvl() != -1 && getPoke1Move1() != 0 
+			&& getPoke1Move2() != 0 && getPoke1Move3() != 0 && getPoke1Move4() != 0){
 				System.out.println("Pokemon 1 Generated");
 			Pokemon pokemon1 = new Pokemon(getPokemon1(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 					getPoke1Lvl(), 0, 0, false, false, 50, getPoke1Move1(), 

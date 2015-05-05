@@ -24,7 +24,7 @@ public class Pokemon {
 			.4, 6);
 		}
 	}
-	public void Pickachu(int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
+	/*public void Pickachu(int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			Type Type1, Type Type2, int Status, boolean confused, boolean Gender, int CatchRate,
 			Move Move1, Move Move2, Move Move3, Move Move4, 
 			int HealthBase, int Hiv, int Hev, int Hgive, 
@@ -33,7 +33,7 @@ public class Pokemon {
 			int SpAtkBase, int SpAtkiv, int SpAtkev, int SpAtkgive,
 			int SpDefBase, int SpDefiv, int SpDefev, int SpDefgive,
 			int SpeedBase, int Speediv, int Speedev, int Speedgive,
-			double height, double weight){}
+			double height, double weight){}*/
 }
 
 /*int Species, String Name, String Ability, String Nature, String HeldItem, int Level, int Exp,
