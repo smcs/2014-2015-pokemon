@@ -1,5 +1,12 @@
+import java.util.Vector;
+
 
 public class Pokemon {
+	
+	Vector<Poke> moveList = Poke.PopulateMoveVector();
+	Vector<Poke> pokeList = Poke.PopulatePokeVector();
+	
+	String move1, move2, move3, move4, level, name = null;
 	
 	public Pokemon (int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			int Status, boolean confused, boolean Gender, int CatchRate,
@@ -11,19 +18,48 @@ public class Pokemon {
 			int SpDefiv, int SpDefev,
 			int Speediv, int Speedev)
 	{
-		if (Species == 25){
-			Pickachu(25, Name, Ability, Nature,  HeldItem, Level, Exp,
-			Type.Electric, null, Status, confused, Gender, 190,
-			Move1, Move2, Move3, Move4, 
-			35,  Hiv, Hev, 0,
-			55, Atkiv, Atkev, 0,
-			40, Defiv, Defev, 0,
-			50, SpAtkiv, SpAtkev, 0,
-			50, SpDefiv, SpDefev, 0,
-			90, Speediv, Speedev, 2,
-			.4, 6);
-		}
+		
+		level = Integer.toString(Level);
+		
+	
 	}
+	
+	public String getName(){
+		return name;
+	}
+	public String getLevel(){
+		return level;
+	}
+	public String getMove1(){
+		return move1;
+	}
+	public String getMove2(){
+		return move2;
+	}
+	public String getMove3(){
+		return move3;
+	}
+	public String getMove4(){
+		return move4;
+	}
+	
+	
+	
+	
+	
+	
+	/*if (Species == 25){
+		Pickachu(25, Name, Ability, Nature,  HeldItem, Level, Exp,
+		Type.Electric, null, Status, confused, Gender, 190,
+		Move1, Move2, Move3, Move4, 
+		35,  Hiv, Hev, 0,
+		55, Atkiv, Atkev, 0,
+		40, Defiv, Defev, 0,
+		50, SpAtkiv, SpAtkev, 0,
+		50, SpDefiv, SpDefev, 0,
+		90, Speediv, Speedev, 2,
+		.4, 6);
+	}*/
 	/*public void Pickachu(int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			Type Type1, Type Type2, int Status, boolean confused, boolean Gender, int CatchRate,
 			Move Move1, Move Move2, Move Move3, Move Move4, 

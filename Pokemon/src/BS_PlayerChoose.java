@@ -31,6 +31,8 @@ public class BS_PlayerChoose extends BS_JPanel {
 	private JComboBox Poke1Move3, Poke2Move3, Poke3Move3, Poke4Move3, Poke5Move3, Poke6Move3;
 	private JComboBox Poke1Move4, Poke2Move4, Poke3Move4, Poke4Move4, Poke5Move4, Poke6Move4;
 	
+	Pokemon pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6 = null;
+	
 	
 	public BS_PlayerChoose() {
 		
@@ -430,54 +432,65 @@ public class BS_PlayerChoose extends BS_JPanel {
 	}
 
 	public void setPokemon() {
-
+		if(pokemon1 == null){
 		if(getPokemon1() != 0 && getPoke1Lvl() != -1 && getPoke1Move1() != 0 
 			&& getPoke1Move2() != 0 && getPoke1Move3() != 0 && getPoke1Move4() != 0){
 				System.out.println("Pokemon 1 Generated");
-			Pokemon pokemon1 = new Pokemon(getPokemon1(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+			pokemon1 = new Pokemon(getPokemon1(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 					getPoke1Lvl(), 0, 0, false, false, 50, getPoke1Move1(), 
 					getPoke1Move2(), getPoke1Move3(), getPoke1Move4(),
 					20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 		}
-		if(getPokemon2() != -1 && getPoke2Lvl() != -1 && getPoke2Move1() != -1 
-				&& getPoke2Move2() != -1 && getPoke2Move3() != -1 && getPoke2Move4() != -1){
+		}
+		if(pokemon2 == null){
+		if(getPokemon2() != 0 && getPoke2Lvl() != -1 && getPoke2Move1() != 0 
+				&& getPoke2Move2() != 0 && getPoke2Move3() != 0 && getPoke2Move4() != 0){
 					System.out.println("Pokemon 2 Generated");
-				Pokemon pokemon2 = new Pokemon(getPokemon2(), "Pokemon 2", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+				pokemon2 = new Pokemon(getPokemon2(), "Pokemon 2", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 						getPoke2Lvl(), 0, 0, false, false, 50, getPoke2Move1(), 
 						getPoke2Move2(), getPoke2Move3(), getPoke2Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon3() != -1 && getPoke3Lvl() != -1 && getPoke3Move1() != -1 
-				&& getPoke3Move2() != -1 && getPoke3Move3() != -1 && getPoke3Move4() != -1){
+		}
+		if(pokemon3 == null){
+		if(getPokemon3() != 0 && getPoke3Lvl() != -1 && getPoke3Move1() != 0 
+				&& getPoke3Move2() != 0 && getPoke3Move3() != 0 && getPoke3Move4() != 0){
 					System.out.println("Pokemon 3 Generated");
-				Pokemon pokemon3 = new Pokemon(getPokemon3(), "Pokemon3", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+				pokemon3 = new Pokemon(getPokemon3(), "Pokemon3", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 						getPoke3Lvl(), 0, 0, false, false, 50, getPoke3Move1(), 
 						getPoke3Move2(), getPoke3Move3(), getPoke3Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon4() != -1 && getPoke4Lvl() != -1 && getPoke4Move1() != -1 
-				&& getPoke4Move2() != -1 && getPoke4Move3() != -1 && getPoke4Move4() != -1){
+		}
+		if(pokemon4 == null){
+		if(getPokemon4() != 0 && getPoke4Lvl() != -1 && getPoke4Move1() != 0 
+				&& getPoke4Move2() != 0 && getPoke4Move3() != 0 && getPoke4Move4() != 0){
 					System.out.println("Pokemon 4 Generated");
-				Pokemon pokemon4 = new Pokemon(getPokemon4(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+				pokemon4 = new Pokemon(getPokemon4(), "Pokemon 1", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 						getPoke4Lvl(), 0, 0, false, false, 50, getPoke4Move1(), 
 						getPoke4Move2(), getPoke4Move3(), getPoke4Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon5() != -1 && getPoke5Lvl() != -1 && getPoke5Move1() != -1 
-				&& getPoke5Move2() != -1 && getPoke5Move3() != -1 && getPoke5Move4() != -1){
+		}
+		if(pokemon5 == null){
+		if(getPokemon5() != 0 && getPoke5Lvl() != -1 && getPoke5Move1() != 0 
+				&& getPoke5Move2() != 0 && getPoke5Move3() != 0 && getPoke5Move4() != 0){
 					System.out.println("Pokemon 5 Generated");
-				Pokemon pokemon5 = new Pokemon(getPokemon5(), "Pokemon 5", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+				pokemon5 = new Pokemon(getPokemon5(), "Pokemon 5", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 						getPoke5Lvl(), 0, 0, false, false, 50, getPoke5Move1(), 
 						getPoke5Move2(), getPoke5Move3(), getPoke5Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
-		if(getPokemon6() != -1 && getPoke6Lvl() != -1 && getPoke6Move1() != -1 
-				&& getPoke6Move2() != -1 && getPoke6Move3() != -1 && getPoke6Move4() != -1){
+		}
+		if(pokemon6 == null){
+		if(getPokemon6() != 0 && getPoke6Lvl() != -1 && getPoke6Move1() != 0 
+				&& getPoke6Move2() != 0 && getPoke6Move3() != 0 && getPoke6Move4() != 0){
 					System.out.println("Pokemon 6 Generated");
-				Pokemon pokemon6 = new Pokemon(getPokemon6(), "Pokemon 6", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
+				pokemon6 = new Pokemon(getPokemon6(), "Pokemon 6", Ability.Levitate, Nature.Bold, Item.lifeOrb, 
 						getPoke6Lvl(), 0, 0, false, false, 50, getPoke6Move1(), 
 						getPoke6Move2(), getPoke6Move3(), getPoke6Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 			}
+		}
 	}
 }
