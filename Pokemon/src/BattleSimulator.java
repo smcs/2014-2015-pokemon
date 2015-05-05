@@ -160,7 +160,7 @@ public class BattleSimulator {
 		
 		return Damage;
 	}
-	//Notes: Level is level of attacking Pokemon
+	//Level is level of attacking Pokemon
 	
 	public double boostCalculator(int Boost){
 		double Booster = 1;
