@@ -45,56 +45,49 @@ public class BattleSimulator {
 		//Pokemon P2poke = new Pokemon(blah blah);
 	}
 	
-	public double statCalculator(int Base, int IV, int EV, int Level){
-		double Stat;
-		Stat = ((IV + (2*Base) + (EV/4)) * (Level/100)) + 5;
-		Math.floor(Stat);
-		return Stat;
-	}
-	
 	public double hpCalculator(int Base, int IV, int EV, int Level){
-		double HP;
-		HP = ((IV + (2*Base) + (EV/4) + 100) * (Level/100)) + 10;
+		double HP = ((IV + (2*Base) + (EV/4) + 100) * (Level/100)) + 10;
 		Math.floor(HP);
 		return HP;
 	}
 	
-	// statType: 0 == Attack, 1 == Defense, 2 == Sp.Attack, 3 == Sp.Defense, 4 == Speed
-	public double natureCalculator(int Stat, Nature Nat, int statType){
-		double stat = Stat;
-
+	public double statCalculator(int Base, int IV, int EV, int Level, Nature Nat, int statType){
+		// statType: 0 == Attack, 1 == Defense, 2 == Sp.Attack, 3 == Sp.Defense, 4 == Speed
+		double Stat = ((IV + (2*Base) + (EV/4)) * (Level/100)) + 5;
+		
 		if(statType == 0 && ((Nat == Nature.Lonely) || (Nat == Nature.Brave) || (Nat == Nature.Adamant) || (Nat == Nature.Naughty))){
-			stat = stat * 1.1;
+			Stat = Stat * 1.1;
 		}
 		if(statType == 0 && ((Nat == Nature.Bold) || (Nat == Nature.Timid) || (Nat == Nature.Modest) || (Nat == Nature.Calm))){
-			stat = stat * .9;
+			Stat = Stat * .9;
 		}
 		if(statType == 1 && ((Nat == Nature.Bold) || (Nat == Nature.Relaxed) || (Nat == Nature.Impish) || (Nat == Nature.Lax))){
-			stat = stat * 1.1;
+			Stat = Stat * 1.1;
 		}
 		if(statType == 1 && ((Nat == Nature.Lonely) || (Nat == Nature.Hasty) || (Nat == Nature.Mild) || (Nat == Nature.Gentle))){
-			stat = stat * .9;
+			Stat = Stat * .9;
 		}
 		if(statType == 2 && ((Nat == Nature.Modest) || (Nat == Nature.Mild) || (Nat == Nature.Quiet) || (Nat == Nature.Rash))){
-			stat = stat * 1.1;
+			Stat = Stat * 1.1;
 		}
 		if(statType == 2 && ((Nat == Nature.Adamant) || (Nat == Nature.Impish) || (Nat == Nature.Jolly) || (Nat == Nature.Careful))){
-			stat = stat * .9;
+			Stat = Stat * .9;
 		}
 		if(statType == 3 && ((Nat == Nature.Calm) || (Nat == Nature.Gentle) || (Nat == Nature.Sassy) || (Nat == Nature.Careful))){
-			stat = stat * 1.1;
+			Stat = Stat * 1.1;
 		}
 		if(statType == 3 && ((Nat == Nature.Naughty) || (Nat == Nature.Lax) || (Nat == Nature.Naive) || (Nat == Nature.Rash))){
-			stat = stat * .9;
+			Stat = Stat * .9;
 		}
 		if(statType == 4 && ((Nat == Nature.Timid) || (Nat == Nature.Hasty) || (Nat == Nature.Jolly) || (Nat == Nature.Naive))){
-			stat = stat * 1.1;
+			Stat = Stat * 1.1;
 		}
 		if(statType == 4 && ((Nat == Nature.Brave) || (Nat == Nature.Relaxed) || (Nat == Nature.Quiet) || (Nat == Nature.Sassy))){
-			stat = stat * .9;
+			Stat = Stat * .9;
 		}
-		Math.floor(stat);
-		return stat;
+		Math.floor(Stat);
+		
+		return Stat;
 	}
 	
 	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
