@@ -95,5 +95,63 @@ public class Ability {
 	public static Ability shellArmor;
 	
 	public static Ability airLock;
+	public static Ability tangledFeet;
+	public static Ability motorDrive;
+	public static Ability Rivalry;
+	public static Ability Steadfast;
+	
+	public static Ability snowCloak;
+	public static Ability Gluttony;
+	public static Ability angerPoint;
+	public static Ability Unburden;
+	public static Ability Heatproof;
+	
+	public static Ability Simple;
+	public static Ability drySkin;
+	public static Ability Download;
+	public static Ability ironFist;
+	public static Ability poisonHeal;
+	
+	public static Ability Adaptability;
+	public static Ability skillLink;
+	public static Ability Hydration;
+	public static Ability solarPower;
+	public static Ability quickFeet;
+	
+	public static Ability Normalize;
+	public static Ability Sniper;
+	public static Ability magicGuard;
+	public static Ability noGuard;
+	public static Ability Stall;
+	
+	public static Ability Technician;
+	public static Ability leafGuard;
+	public static Ability Klutz;
+	public static Ability moldBreaker;
+	public static Ability superLuck;
+	
+	public static Ability Aftermath;
+	public static Ability Anticipation;
+	public static Ability Forewarn;
+	public static Ability Unaware;
+	public static Ability tintedLens;
+	
+	public static Ability Filter;
+	public static Ability slowStart;
+	public static Ability Scrappy;
+	public static Ability stormDrain;
+	public static Ability iceBody;
+	
+	public static Ability solidRock;
+	public static Ability snowWarning;
+	public static Ability honeyGather;
+	public static Ability Frisk;
+	public static Ability Reckless;
+	
+	public static Ability Multitype;
+	public static Ability flowerGift;
+	public static Ability badDreams;
+	public static Ability Pickpocket;
+	public static Ability sheerForce;
 	
 }
