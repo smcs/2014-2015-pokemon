@@ -200,5 +200,38 @@ public class Ability {
 	public static Ability victoryStar;
 	public static Ability Turboblaze;
 	public static Ability Teravolt;
+	public static Ability aromaVeil;
+	
+	public static Ability flowerVeil;
+	public static Ability cheekPouch;
+	public static Ability Protean;
+	public static Ability furCoat;
+	public static Ability Magician;
+	
+	public static Ability Bulletproof;
+	public static Ability Competitive;
+	public static Ability strongJaw;
+	public static Ability Refrigerate;
+	public static Ability sweetVeil;
+	
+	public static Ability stanceChange;
+	public static Ability galeWings;
+	public static Ability megaLauncher;
+	public static Ability grassPelt;
+	public static Ability Symbiosis;
+	
+	public static Ability toughClaws;
+	public static Ability Pixilate;
+	public static Ability Gooey;
+	public static Ability Aerilate;
+	public static Ability parentalBond;
+	
+	public static Ability darkAura;
+	public static Ability fairyAura;
+	public static Ability auraBreak;
+	
+	public static Ability primordialSea;
+	public static Ability desolateLand;
+	public static Ability deltaStream;
 	
 }
