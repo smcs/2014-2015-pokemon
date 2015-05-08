@@ -5,16 +5,16 @@ import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public class PanelListener implements ActionListener{
+public class ArenaPanelListener implements ActionListener{
 
-	private BS_PlayerChoose myPanel;
+	private BS_Arena myPanel;
 	
-	public PanelListener(BS_PlayerChoose p) {
+	public ArenaPanelListener(BS_Arena p) {
 		myPanel = p;
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-			myPanel.setPokemon();
+			
 			
 	}
 

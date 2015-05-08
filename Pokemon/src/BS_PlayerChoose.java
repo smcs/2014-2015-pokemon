@@ -306,7 +306,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 			buttonListener.registerScreen("Ready Up", BS_PlayerChoose.class);
 		} else {
 			/* whatever happens after Player 2 */
-			buttonListener.registerScreen("Ready Up", BS_JPanel.class);
+			buttonListener.registerScreen("Ready Up", BS_Arena.class);
 		}
 		readyUp.addActionListener(buttonListener);
 		readyUp.setBounds(315, 440, 120, 30);
