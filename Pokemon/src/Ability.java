@@ -154,4 +154,51 @@ public class Ability {
 	public static Ability Pickpocket;
 	public static Ability sheerForce;
 	
+	public static Ability Contrary;
+	public static Ability Unnerve;
+	public static Ability Defiant;
+	public static Ability Defeatist;
+	public static Ability cursedBody;
+	
+	public static Ability Healer;
+	public static Ability friendGuard;
+	public static Ability weakGuard;
+	public static Ability heavyMetal;
+	public static Ability lightMetal;
+	
+	public static Ability Multiscale;
+	public static Ability toxicBoost;
+	public static Ability flareBoost;
+	public static Ability Harvest;
+	public static Ability Telepathy;
+	
+	public static Ability Moody;
+	public static Ability Overcoat;
+	public static Ability poisonTouch;
+	public static Ability Regenerator;
+	public static Ability bigPecks;
+	
+	public static Ability sandRush;
+	public static Ability wonderSkin;
+	public static Ability Analytic;
+	public static Ability Illusion;
+	public static Ability Imposter;
+	
+	public static Ability Infiltrator;
+	public static Ability Mummy;
+	public static Ability Moxie;
+	public static Ability Justified;
+	public static Ability Rattled;
+	
+	public static Ability magicBounce;
+	public static Ability sapSipper;
+	public static Ability Prankster;
+	public static Ability sandForce;
+	public static Ability ironBarbs;
+	
+	public static Ability zenMode;
+	public static Ability victoryStar;
+	public static Ability Turboblaze;
+	public static Ability Teravolt;
+	
 }
