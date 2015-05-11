@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 
 public class Player {
 	
@@ -9,30 +11,39 @@ public class Player {
 	private Pokemon Pokemon5 = null;
 	private Pokemon Pokemon6 = null;
 	
-	public Player(){
-		
+	private int playerNum;
+	
+	private Vector<Pokemon> pokemon;
+	
+	public Player(int playerNumber){
+		playerNum = playerNumber;
 	}
 	
 		public void setName(String name) {
 		this.name = name;
 	}
-		public void setPokemon1(){
-			
+		
+		public void addPoke(Pokemon poke){
+			pokemon.addElement(poke);
 		}
-		public void setPokemon2(){
-			
+		
+		public Pokemon getPoke1(){
+			return pokemon.get(0);
 		}
-		public void setPokemon3(){
-			
+		public Pokemon getPoke2(){
+			return pokemon.get(1);
 		}
-		public void setPokemon4(){
-			
+		public Pokemon getPoke3(){
+			return pokemon.get(2);
 		}
-		public void setPokemon5(){
-			
+		public Pokemon getPoke4(){
+			return pokemon.get(3);
 		}
-		public void setPokemon6(){
-			
+		public Pokemon getPoke5(){
+			return pokemon.get(4);
+		}
+		public Pokemon getPoke6(){
+			return pokemon.get(5);
 		}
 		
 }

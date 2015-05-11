@@ -23,12 +23,14 @@ public class ButtonListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		try{
 			
+			
 			BS_JPanel temp = (BS_JPanel) screens.get(e.getActionCommand()).newInstance();
 			
 			((JFrame) SwingUtilities.getWindowAncestor(panel)).setContentPane(temp);
 			temp.revalidate();
 			temp.repaint();
 			temp.attachBattleSimulator(battleSimulator);
+			BS_PlayerChoose.setPlayerNumber(2);
 			
 		} catch (Exception exc) {
 			exc.printStackTrace();

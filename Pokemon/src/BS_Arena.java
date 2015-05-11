@@ -9,15 +9,16 @@ public class BS_Arena extends BS_JPanel{
 	
 	private boolean turn = false;
 	
-	public BS_Arena(){
+	public BS_Arena(Player p1, Player p2){
 		
 		setLayout(null);
 		buttonListener = new ButtonListener(this, battleSimulator);
 		panelListener = new ArenaPanelListener(this);
 		
-		JButton p1Move1 = new JButton("Move 1");
+		JButton p1Move1 = new JButton(p1.getPoke1().getMove1());
 		p1Move1.setBounds(10, 200, 89, 29);
 		p1Move1.addActionListener(buttonListener);
+		//p1Move1.removeActionListener(l);
 		add(p1Move1);
 		//p1Move1.disable();
 		
@@ -37,9 +38,10 @@ public class BS_Arena extends BS_JPanel{
 		add(p1Move4);
 		
 		JComboBox p1PokeSwitch = new JComboBox();
-		p1PokeSwitch.setBounds(10, 450, 120, 50);
+		p1PokeSwitch.setBounds(10, 400, 120, 50);
 		p1PokeSwitch.addActionListener(buttonListener);
 		add(p1PokeSwitch);
+		//p1PokeSwitch.addItem(item);
 		
 		JButton p2Move1 = new JButton("Move 1");
 		p2Move1.setBounds(651, 200, 89, 29);

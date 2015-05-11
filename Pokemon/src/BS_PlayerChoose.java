@@ -1,18 +1,15 @@
 import java.awt.Color;
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JComboBox;
-
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
-
-import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.util.Vector;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 
 public class BS_PlayerChoose extends BS_JPanel {
@@ -20,7 +17,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 	private static final int MAX_PLAYERS = 2;
 	private ButtonListener buttonListener;
 	private PanelListener panelListener;
-	private Player player;
+	private Player p1, p2;
 	private static int playerNumber = 1;
 	//private int storePokemon1, storePoke1Lvl = 0;
 	
@@ -33,10 +30,13 @@ public class BS_PlayerChoose extends BS_JPanel {
 	
 	Pokemon pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6 = null;
 	
-	
 	public BS_PlayerChoose() {
 		
-		this.player = new Player();
+		if(playerNumber == 1){
+		this.p1 = new Player(1);
+		} else {
+			this.p2 = new Player(2);
+		}
 		
 		Vector<Poke> pokeList = Poke.PopulatePokeVector();
 		Vector<Poke> moveList = Poke.PopulateMoveVector();
@@ -299,18 +299,31 @@ public class BS_PlayerChoose extends BS_JPanel {
 		add(Poke6Move4);
 		Poke6Move4.setModel(new DefaultComboBoxModel(moveList));
 		
+		if(playerNumber == 1){
 		
+		JButton readyUp1 = new JButton("Ready Up");
+		buttonListener.registerScreen("Ready Up", BS_PlayerChoose.class);
+		readyUp1.addActionListener(buttonListener);
+		readyUp1.setBounds(315, 440, 120, 30);
+		add(readyUp1);
 		
-		JButton readyUp = new JButton("Ready Up");
-		if (playerNumber < MAX_PLAYERS) {
-			buttonListener.registerScreen("Ready Up", BS_PlayerChoose.class);
 		} else {
-			/* whatever happens after Player 2 */
-			buttonListener.registerScreen("Ready Up", BS_Arena.class);
+		
+		JButton readyUp2 = new JButton("Ready Up");
+		final BS_JPanel ugly = this;
+		readyUp2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				BS_JPanel temp = new BS_Arena(p1, p2);
+				((JFrame) SwingUtilities.getWindowAncestor(ugly)).setContentPane(temp);
+				temp.revalidate();
+				temp.repaint();
+				temp.attachBattleSimulator(battleSimulator);
+			}
+		});
+		readyUp2.setBounds(315, 440, 120, 30);
+		add(readyUp2);
+		
 		}
-		readyUp.addActionListener(buttonListener);
-		readyUp.setBounds(315, 440, 120, 30);
-		add(readyUp);
 		
 		setPlayerName();
 		
@@ -425,10 +438,33 @@ public class BS_PlayerChoose extends BS_JPanel {
 		return Poke6Move4.getSelectedIndex();
 	}
 	
+	public Pokemon getPoke1(){
+		return pokemon1;
+	}
+	public Pokemon getPoke2(){
+		return pokemon2;
+	}
+	public Pokemon getPoke3(){
+		return pokemon3;
+	}
+	public Pokemon getPoke4(){
+		return pokemon4;
+	}
+	public Pokemon getPoke5(){
+		return pokemon5;
+	}
+	public Pokemon getPoke6(){
+		return pokemon6;
+	}
+	
+	
 	public void setPlayerName(){
 		
-		player.setName(JOptionPane.showInputDialog(null, "Player " + playerNumber++ + " Name:"));
-	    
+		if(playerNumber == 1){
+		p1.setName(JOptionPane.showInputDialog(null, "Player " + playerNumber++ + " Name:"));
+		} else {
+			p2.setName(JOptionPane.showInputDialog(null, "Player " + playerNumber++ + " Name:"));
+		}
 	}
 
 	public void setPokemon() {
@@ -440,6 +476,11 @@ public class BS_PlayerChoose extends BS_JPanel {
 					getPoke1Lvl(), 0, 0, false, false, 50, getPoke1Move1(), 
 					getPoke1Move2(), getPoke1Move3(), getPoke1Move4(),
 					20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
+			if(playerNumber == 1){
+			p1.addPoke(pokemon1);
+			} else {
+			p2.addPoke(pokemon1);
+			}
 		}
 		}
 		if(pokemon2 == null){
@@ -450,6 +491,11 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke2Lvl(), 0, 0, false, false, 50, getPoke2Move1(), 
 						getPoke2Move2(), getPoke2Move3(), getPoke2Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
+				if(playerNumber == 1){
+					p1.addPoke(pokemon2);
+					} else {
+					p2.addPoke(pokemon2);
+					}
 			}
 		}
 		if(pokemon3 == null){
@@ -460,6 +506,11 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke3Lvl(), 0, 0, false, false, 50, getPoke3Move1(), 
 						getPoke3Move2(), getPoke3Move3(), getPoke3Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
+				if(playerNumber == 1){
+					p1.addPoke(pokemon3);
+					} else {
+					p2.addPoke(pokemon3);
+					}
 			}
 		}
 		if(pokemon4 == null){
@@ -470,6 +521,11 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke4Lvl(), 0, 0, false, false, 50, getPoke4Move1(), 
 						getPoke4Move2(), getPoke4Move3(), getPoke4Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
+				if(playerNumber == 1){
+					p1.addPoke(pokemon4);
+					} else {
+					p2.addPoke(pokemon4);
+					}
 			}
 		}
 		if(pokemon5 == null){
@@ -480,6 +536,11 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke5Lvl(), 0, 0, false, false, 50, getPoke5Move1(), 
 						getPoke5Move2(), getPoke5Move3(), getPoke5Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
+				if(playerNumber == 1){
+					p1.addPoke(pokemon5);
+					} else {
+					p2.addPoke(pokemon5);
+					}
 			}
 		}
 		if(pokemon6 == null){
@@ -490,7 +551,18 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke6Lvl(), 0, 0, false, false, 50, getPoke6Move1(), 
 						getPoke6Move2(), getPoke6Move3(), getPoke6Move4(),
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
+				if(playerNumber == 1){
+					p1.addPoke(pokemon6);
+					} else {
+					p2.addPoke(pokemon6);
+					}
 			}
 		}
+		
 	}
+
+	public static void setPlayerNumber(int i) {
+		playerNumber = i;
+	}
+	
 }
