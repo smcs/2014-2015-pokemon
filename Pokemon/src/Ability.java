@@ -233,5 +233,4 @@ public class Ability {
 	public static Ability primordialSea;
 	public static Ability desolateLand;
 	public static Ability deltaStream;
-	
 }
