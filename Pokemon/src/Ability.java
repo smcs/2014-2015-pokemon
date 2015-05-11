@@ -7,7 +7,7 @@ public class Ability {
 	public static Ability Stench;
 	public static Ability Drizzle;
 	public static Ability speedBoost;
-	public static Ability battleArmor;
+	public static Ability battleArmor; //implemented
 	public static Ability Sturdy;
 	
 	public static Ability Damp;
@@ -19,7 +19,7 @@ public class Ability {
 	public static Ability waterAbsorb;
 	public static Ability Oblivious;
 	public static Ability cloudNine;
-	public static Ability compoundEyes;
+	public static Ability compoundEyes; //implemented
 	public static Ability Insomnia;
 	
 	public static Ability colorChange;
@@ -32,9 +32,9 @@ public class Ability {
 	public static Ability Intimidate;
 	public static Ability shadowTag;
 	public static Ability roughSkin;
-	public static Ability wonderGuard;
+	public static Ability wonderGuard; //implemented
 	
-	public static Ability Levitate;
+	public static Ability Levitate; //implemented
 	public static Ability effectSpore;
 	public static Ability Synchronize;
 	public static Ability clearBody;
@@ -193,7 +193,7 @@ public class Ability {
 	public static Ability magicBounce;
 	public static Ability sapSipper;
 	public static Ability Prankster;
-	public static Ability sandForce;
+	public static Ability sandForce;//implemented
 	public static Ability ironBarbs;
 	
 	public static Ability zenMode;
@@ -226,9 +226,9 @@ public class Ability {
 	public static Ability Aerilate;
 	public static Ability parentalBond;
 	
-	public static Ability darkAura;
-	public static Ability fairyAura;
-	public static Ability auraBreak;
+	public static Ability darkAura; //implemented
+	public static Ability fairyAura; //implemented
+	public static Ability auraBreak; //implemented
 	
 	public static Ability primordialSea;
 	public static Ability desolateLand;

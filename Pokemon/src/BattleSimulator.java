@@ -34,9 +34,6 @@ public class BattleSimulator {
 		
 	}
 	
-	public addPlayer(Player p) {
-		players.add(p);
-	}
 	
 	public void createP1Pokemon(){
 		//Pokemon P1poke = new Pokemon(blah blah);
@@ -90,10 +87,17 @@ public class BattleSimulator {
 		return Stat;
 	}
 	
-	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost){
+	public boolean accuracyCalculator(int Accuracy, int accuracyBoost, int evasionBoost, Ability attackingPokemonAbility){
 		boolean hit = false;
 		int hitBoost = accuracyBoost - evasionBoost;
 		double hitMod = 1;
+		double abilityMod = 1;
+		if (attackingPokemonAbility == Ability.compoundEyes){
+			abilityMod = 1.3;
+		}
+		if (attackingPokemonAbility == Ability.victoryStar){
+			abilityMod = 1.1;
+		}
 		if(hitBoost <= -6){
 			hitMod = 3/9;
 		}
@@ -131,7 +135,7 @@ public class BattleSimulator {
 			hitMod = 9/3;
 		}
 		
-		if(Math.random() <= (Accuracy * hitMod)){
+		if(Math.random() <= (Accuracy * hitMod * abilityMod)){
 			hit = true;
 		}
 		
@@ -147,7 +151,7 @@ public class BattleSimulator {
 		double STAB = stabCalculator (moveType, attackingPokemonType1, attackingPokemonType2);
 		double attackBooster = boostCalculator(attackBoost);
 		double defenseBooster = boostCalculator(defenseBoost);
-		double Critical = critCalculator(critBoost);
+		double Critical = critCalculator(critBoost, attackingPokemonAbility);
 		double heldItem = itemCalculator (attackingPokemonItem, defendingPokemonItem);
 		double abilityMod = abilityCalculator (attackingPokemonAbility, defendingPokemonAbility, moveType);
 		double Weather = weatherCalculator(moveType);
@@ -155,6 +159,12 @@ public class BattleSimulator {
 		
 		double Damage = (((((2 * Level) + 10)/250) * ((Attack*attackBooster)/(Defense * defenseBooster)) * BasePower) + 2) 
 		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other * (1 - (Math.random()) / (100/15));
+		
+		if(defendingPokemonAbility == Ability.wonderGuard && effectiveness < 2 && (attackingPokemonAbility != Ability.moldBreaker || attackingPokemonAbility != Ability.Teravolt || attackingPokemonAbility != Ability.Turboblaze)){
+			effectiveness = 0;
+		}
+		
+		
 		
 		Math.floor(Damage);
 		
@@ -231,7 +241,21 @@ public class BattleSimulator {
 		if (defendingPokemonAbility == Ability.Levitate && moveType == Type.Ground){
 			abilityMod = 0;
 		}
-		
+		if(attackingPokemonAbility == Ability.sandForce && weatherStatus == 3 && (moveType == Type.Rock || moveType == Type.Ground || moveType == Type.Steel)){
+			abilityMod = abilityMod * 1.3;
+		}
+		if (moveType == Type.Fairy && (attackingPokemonAbility == Ability.fairyAura || defendingPokemonAbility == Ability.fairyAura) && (attackingPokemonAbility != Ability.auraBreak || defendingPokemonAbility != Ability.auraBreak)){
+			abilityMod = abilityMod * (1 + (1/3));
+		}
+		if (moveType == Type.Dark && (attackingPokemonAbility == Ability.darkAura || defendingPokemonAbility == Ability.darkAura) && (attackingPokemonAbility != Ability.auraBreak || defendingPokemonAbility != Ability.auraBreak)){
+			abilityMod = abilityMod * (1 + (1/3));
+		}
+		if (moveType == Type.Fairy && (attackingPokemonAbility == Ability.fairyAura || defendingPokemonAbility == Ability.fairyAura) && (attackingPokemonAbility == Ability.auraBreak || defendingPokemonAbility == Ability.auraBreak)){
+			abilityMod = abilityMod / (1 + (1/3));
+		}
+		if (moveType == Type.Dark && (attackingPokemonAbility == Ability.darkAura || defendingPokemonAbility == Ability.darkAura) && (attackingPokemonAbility == Ability.auraBreak || defendingPokemonAbility == Ability.auraBreak)){
+			abilityMod = abilityMod / (1 + (1/3));
+		}
 		return abilityMod;
 	}
 	
@@ -245,7 +269,7 @@ public class BattleSimulator {
 		return heldItem;
 	}
 	
-	public double critCalculator(int critBoost){
+	public double critCalculator(int critBoost, Ability defendingPokemonAbility){
 		double random = Math.random();
 		double Critical = 1;
 		boolean didItCrit = false;
@@ -262,7 +286,7 @@ public class BattleSimulator {
 		if(critBoost >= 3){
 			didItCrit = true;
 		}
-		if (didItCrit == true){
+		if (didItCrit == true && defendingPokemonAbility != Ability.battleArmor){
 			Critical = 1.5;
 		}
 		
