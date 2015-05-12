@@ -26,14 +26,19 @@ public class BattleSimulator {
 	int P2EvasionBoost = 0;
 	int P2AccuracyBoost = 0;
 	
+	private Player p1, p2;
+	
 	private Vector<Player> players = new Vector<Player>();
 	
 	public BattleSimulator(){
 		
-		
+		players.addElement(p1);
+		players.addElement(p2);
 		
 	}
-	
+	public Player getPlayer(int i){
+		return players.get(i);
+	}
 	
 	public void createP1Pokemon(){
 		//Pokemon P1poke = new Pokemon(blah blah);

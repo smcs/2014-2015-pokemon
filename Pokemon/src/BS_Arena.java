@@ -22,17 +22,17 @@ public class BS_Arena extends BS_JPanel{
 		add(p1Move1);
 		//p1Move1.disable();
 		
-		JButton p1Move2 = new JButton("Move 2");
+		JButton p1Move2 = new JButton(p1.getPoke1().getMove2());
 		p1Move2.setBounds(10, 250, 89, 29);
 		p1Move2.addActionListener(buttonListener);
 		add(p1Move2);
 		
-		JButton p1Move3 = new JButton("Move 3");
+		JButton p1Move3 = new JButton(p1.getPoke1().getMove3());
 		p1Move3.setBounds(10, 300, 89, 29);
 		p1Move3.addActionListener(buttonListener);
 		add(p1Move3);
 		
-		JButton p1Move4 = new JButton("Move 4");
+		JButton p1Move4 = new JButton(p1.getPoke1().getMove4());
 		p1Move4.setBounds(10, 350, 89, 29);
 		p1Move4.addActionListener(buttonListener);
 		add(p1Move4);
