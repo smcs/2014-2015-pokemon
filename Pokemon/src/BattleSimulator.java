@@ -146,6 +146,24 @@ public class BattleSimulator {
 	 Type defendingPokemonType1, Type defendingPokemonType2, Type attackingPokemonType1, Type attackingPokemonType2, 
 	 Item attackingPokemonItem, Item defendingPokemonItem, Ability attackingPokemonAbility, Ability defendingPokemonAbility,
 	 int attackBoost, int defenseBoost, int critBoost){
+		double Other = 1;
+		
+		if(attackingPokemonAbility == Ability.Pixilate && moveType == Type.Normal){
+			moveType = Type.Fairy;
+			Other = Other *1.3;
+		}
+		if(attackingPokemonAbility == Ability.Aerilate && moveType == Type.Normal){
+			moveType = Type.Flying;
+			Other = Other *1.3;
+		}
+		if(attackingPokemonAbility == Ability.Refrigerate && moveType == Type.Normal){
+			moveType = Type.Ice;
+			Other = Other *1.3;
+		}
+		if(attackingPokemonAbility == Ability.Protean){
+			attackingPokemonType1 = moveType;
+			attackingPokemonType2 = null;
+		}
 		
 		double effectiveness = typeEffectivenessCalculator (moveType, defendingPokemonType1, defendingPokemonType2);
 		double STAB = stabCalculator (moveType, attackingPokemonType1, attackingPokemonType2);
@@ -155,7 +173,6 @@ public class BattleSimulator {
 		double heldItem = itemCalculator (attackingPokemonItem, defendingPokemonItem);
 		double abilityMod = abilityCalculator (attackingPokemonAbility, defendingPokemonAbility, moveType);
 		double Weather = weatherCalculator(moveType);
-		double Other = 1;
 		
 		double Damage = (((((2 * Level) + 10)/250) * ((Attack*attackBooster)/(Defense * defenseBooster)) * BasePower) + 2) 
 		* STAB * effectiveness * Critical * Weather * heldItem * abilityMod * Other * (1 - (Math.random()) / (100/15));
