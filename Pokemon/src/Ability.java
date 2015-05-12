@@ -197,21 +197,21 @@ public class Ability {
 	public static Ability ironBarbs;
 	
 	public static Ability zenMode;
-	public static Ability victoryStar;
+	public static Ability victoryStar;//implemented
 	public static Ability Turboblaze;
 	public static Ability Teravolt;
 	public static Ability aromaVeil;
 	
 	public static Ability flowerVeil;
 	public static Ability cheekPouch;
-	public static Ability Protean;
+	public static Ability Protean;//implemented
 	public static Ability furCoat;
 	public static Ability Magician;
 	
 	public static Ability Bulletproof;
 	public static Ability Competitive;
 	public static Ability strongJaw;
-	public static Ability Refrigerate;
+	public static Ability Refrigerate; //implemented
 	public static Ability sweetVeil;
 	
 	public static Ability stanceChange;
@@ -221,9 +221,9 @@ public class Ability {
 	public static Ability Symbiosis;
 	
 	public static Ability toughClaws;
-	public static Ability Pixilate;
+	public static Ability Pixilate; //implemented
 	public static Ability Gooey;
-	public static Ability Aerilate;
+	public static Ability Aerilate; //implemented
 	public static Ability parentalBond;
 	
 	public static Ability darkAura; //implemented
