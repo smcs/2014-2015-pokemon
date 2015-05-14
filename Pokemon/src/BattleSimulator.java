@@ -32,8 +32,8 @@ public class BattleSimulator {
 	
 	public BattleSimulator(){
 		
-		players.addElement(p1);
-		players.addElement(p2);
+		players.add(0, p1);
+		players.add(1, p2);
 		
 	}
 	public Player getPlayer(int i){

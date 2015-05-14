@@ -4,7 +4,7 @@ import javax.swing.JComboBox;
 
 public class BS_Arena extends BS_JPanel{
 
-	private ButtonListener buttonListener;
+	private PokeFrameButtonListener buttonListener;
 	private ArenaPanelListener panelListener;
 	
 	private boolean turn = false;
@@ -12,7 +12,7 @@ public class BS_Arena extends BS_JPanel{
 	public BS_Arena(Player p1, Player p2){
 		
 		setLayout(null);
-		buttonListener = new ButtonListener(this, battleSimulator);
+		buttonListener = new PokeFrameButtonListener(this, battleSimulator);
 		panelListener = new ArenaPanelListener(this);
 		
 		JButton p1Move1 = new JButton(p1.getPoke1().getMove1());

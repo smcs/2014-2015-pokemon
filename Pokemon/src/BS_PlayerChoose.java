@@ -35,8 +35,10 @@ public class BS_PlayerChoose extends BS_JPanel {
 
 	Pokemon pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6 = null;
 
-	public BS_PlayerChoose(Player p) {
+	public BS_PlayerChoose(BattleSimulator bs) {
 
+		battleSimulator = bs;
+		
 		if (ran == false) {
 			p = battleSimulator.getPlayer(0);
 		} else {
@@ -315,8 +317,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (ran == false) {
 					ran = true;
-					BS_JPanel temp = new BS_PlayerChoose(battleSimulator
-							.getPlayer(1));
+					BS_JPanel temp = new BS_PlayerChoose(battleSimulator);
 					((JFrame) SwingUtilities.getWindowAncestor(ugly))
 							.setContentPane(temp);
 					temp.revalidate();
@@ -336,7 +337,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 		readyUp.setBounds(315, 440, 120, 30);
 		add(readyUp);
 
-		setPlayerName();
+		//setPlayerName();
 
 	}
 
@@ -525,7 +526,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke1Lvl(), 0, 0, false, false, 50, getPoke1Move1(),
 						getPoke1Move2(), getPoke1Move3(), getPoke1Move4(), 20,
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
-				p.addPoke(pokemon1);
+				p.addPoke(0, pokemon1);
 			}
 		}
 		if (pokemon2 == null) {
@@ -538,7 +539,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke2Lvl(), 0, 0, false, false, 50, getPoke2Move1(),
 						getPoke2Move2(), getPoke2Move3(), getPoke2Move4(), 20,
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
-				p.addPoke(pokemon2);
+				p.addPoke(1, pokemon2);
 			}
 		}
 		if (pokemon3 == null) {
@@ -551,7 +552,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke3Lvl(), 0, 0, false, false, 50, getPoke3Move1(),
 						getPoke3Move2(), getPoke3Move3(), getPoke3Move4(), 20,
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
-				p.addPoke(pokemon3);
+				p.addPoke(2, pokemon3);
 			}
 		}
 		if (pokemon4 == null) {
@@ -564,7 +565,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke4Lvl(), 0, 0, false, false, 50, getPoke4Move1(),
 						getPoke4Move2(), getPoke4Move3(), getPoke4Move4(), 20,
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
-				p.addPoke(pokemon4);
+				p.addPoke(3, pokemon4);
 			}
 		}
 		if (pokemon5 == null) {
@@ -577,7 +578,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke5Lvl(), 0, 0, false, false, 50, getPoke5Move1(),
 						getPoke5Move2(), getPoke5Move3(), getPoke5Move4(), 20,
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
-				p.addPoke(pokemon5);
+				p.addPoke(4, pokemon5);
 			}
 		}
 		if (pokemon6 == null) {
@@ -591,7 +592,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 						getPoke6Move2(), getPoke6Move3(), getPoke6Move4(), 20,
 						20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20);
 
-				p.addPoke(pokemon6);
+				p.addPoke(5, pokemon6);
 
 			}
 		}

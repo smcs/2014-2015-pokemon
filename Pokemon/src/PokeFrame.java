@@ -21,8 +21,7 @@ public class PokeFrame extends JFrame {
 	private CanvasController c1;
 	private BattleSimulator battleSimulator;
 	
-	private ButtonListener buttonListener;
-	
+	private PokeFrameButtonListener buttonListener;
 	
 	private static int width = 750;
 	private static int height = 500;
@@ -62,15 +61,16 @@ public class PokeFrame extends JFrame {
 		homeScreen.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(homeScreen);
 		battleSimulator = new BattleSimulator();
-		buttonListener = new ButtonListener(homeScreen, battleSimulator);
+		buttonListener = new PokeFrameButtonListener(homeScreen, battleSimulator);
 		
 		
 		JButton battleSim = new JButton("Battle Simulator");
-		buttonListener.registerScreen("Battle Simulator", BS_PlayerChoose.class);
+		buttonListener.registerButton(1);
 		battleSim.addActionListener(buttonListener);
 		battleSim.setBounds(120, 305, 120, 75);
 		homeScreen.setLayout(null);
 		homeScreen.add(battleSim);
+		
 		JButton campaign = new JButton("Campaign");
 		//buttonListener.registerScreen("Campaign", campaignStart);
 		campaign.addActionListener(buttonListener);

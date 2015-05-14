@@ -23,8 +23,8 @@ public class Player {
 		this.name = name;
 	}
 		
-		public void addPoke(Pokemon poke){
-			pokemon.addElement(poke);
+		public void addPoke(int index, Pokemon poke){
+			pokemon.add(index, poke);
 		}
 		
 		public Pokemon getPoke1(){
