@@ -6,14 +6,16 @@ public class BS_Arena extends BS_JPanel{
 
 	private PokeFrameButtonListener buttonListener;
 	private ArenaPanelListener panelListener;
+	private BattleSimulator bs;
 	
 	private boolean turn = false;
 	
-	public BS_Arena(Player p1, Player p2){
+	public BS_Arena(Player p1, Player p2, BattleSimulator battleSimulator){
 		
 		setLayout(null);
 		buttonListener = new PokeFrameButtonListener(this, battleSimulator);
 		panelListener = new ArenaPanelListener(this);
+		bs = battleSimulator;
 		
 		JButton p1Move1 = new JButton(p1.getPoke1().getMove1());
 		p1Move1.setBounds(10, 200, 89, 29);
