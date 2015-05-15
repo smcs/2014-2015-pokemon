@@ -35,7 +35,34 @@ public class BattleSimulator {
 		players.add(0, p1);
 		players.add(1, p2);
 		
+		/*
+		if(turnOrder(P1Speed, P2Speed) == true){
+			P1Turn;
+			P2Turn;
+		}
+		if(turnOrder(P1Speed, P2Speed) == false){
+			P2Turn;
+			P1Turn;
+		}
+		  
+		 */
+		
 	}
+	
+	public boolean turnOrder(int P1Speed, int P2Speed){
+		boolean Order = true;
+		if(P1Speed < P2Speed){
+			Order = false;
+		 }
+		 if(P1Speed == P2Speed){ 
+			 if(Math.random() > .5){
+			 	Order = false;
+			 }
+		 }
+		return Order;
+	}
+	
+	
 	public Player getPlayer(int i){
 		return players.get(i);
 	}
