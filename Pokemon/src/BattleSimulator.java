@@ -32,6 +32,9 @@ public class BattleSimulator {
 	
 	public BattleSimulator(){
 		
+		p1 = new Player(1);
+		p2 = new Player(2);
+		
 		players.add(0, p1);
 		players.add(1, p2);
 		

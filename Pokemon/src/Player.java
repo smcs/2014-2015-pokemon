@@ -17,6 +17,16 @@ public class Player {
 	
 	public Player(int playerNumber){
 		playerNum = playerNumber;
+		
+		pokemon = new Vector<Pokemon>();
+		
+		pokemon.addElement(Pokemon1);
+		pokemon.addElement(Pokemon2);
+		pokemon.addElement(Pokemon3);
+		pokemon.addElement(Pokemon4);
+		pokemon.addElement(Pokemon5);
+		pokemon.addElement(Pokemon6);
+		
 	}
 	
 		public void setName(String name) {
@@ -24,7 +34,7 @@ public class Player {
 	}
 		
 		public void addPoke(int index, Pokemon poke){
-			pokemon.add(index, poke);
+			pokemon.set(index, poke);
 		}
 		
 		public Pokemon getPoke1(){
