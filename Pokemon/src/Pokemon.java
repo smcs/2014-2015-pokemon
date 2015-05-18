@@ -6,7 +6,9 @@ public class Pokemon {
 	Vector<Poke> moveList = Poke.PopulateMoveVector();
 	Vector<Poke> pokeList = Poke.PopulatePokeVector();
 	
-	String move1, move2, move3, move4, level, name = null;
+	String level, name = null;
+	Move move1, move2, move3, move4; 
+	private int health;
 	
 	public Pokemon (int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			int Status, boolean confused, boolean Gender, int CatchRate,
@@ -20,7 +22,10 @@ public class Pokemon {
 	{
 		
 		level = Integer.toString(Level);
-		
+		move1 = new Move(Move1);
+		move2 = new Move(Move2);
+		move3 = new Move(Move3);
+		move4 = new Move(Move4);
 	
 	}
 	
@@ -30,17 +35,20 @@ public class Pokemon {
 	public String getLevel(){
 		return level;
 	}
-	public String getMove1(){
+	public Move getMove1(){
 		return move1;
 	}
-	public String getMove2(){
+	public Move getMove2(){
 		return move2;
 	}
-	public String getMove3(){
+	public Move getMove3(){
 		return move3;
 	}
-	public String getMove4(){
+	public Move getMove4(){
 		return move4;
+	}
+	public int getHealth(){
+		return health;
 	}
 	
 	

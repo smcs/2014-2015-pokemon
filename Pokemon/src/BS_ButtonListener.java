@@ -11,6 +11,7 @@ import javax.swing.SwingUtilities;
 public class BS_ButtonListener implements ActionListener {
 
 	private BattleSimulator bs;
+	private BS_Arena bsa;
 	private int button;
 	private Player p1, p2;
 
@@ -24,28 +25,36 @@ public class BS_ButtonListener implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (button == 1) {
-			BS_Arena.doP1Move1();
+			bsa.doP1Move1();
+			bsa.setP2Health();
 		}
 		if (button == 2) {
-			BS_Arena.doP1Move2();
+			bsa.doP1Move2();
+			bsa.setP2Health();
 		}
 		if (button == 3) {
-			BS_Arena.doP1Move3();
+			bsa.doP1Move3();
+			bsa.setP2Health();
 		}
 		if (button == 4) {
-			BS_Arena.doP1Move4();
+			bsa.doP1Move4();
+			bsa.setP2Health();
 		}
 		if (button == 5) {
-			BS_Arena.doP2Move1();
+			bsa.doP2Move1();
+			bsa.setP1Health();
 		}
 		if (button == 6) {
-			BS_Arena.doP2Move2();
+			bsa.doP2Move2();
+			bsa.setP1Health();
 		}
 		if (button == 7) {
-			BS_Arena.doP2Move3();
+			bsa.doP2Move3();
+			bsa.setP1Health();
 		}
 		if (button == 8) {
-			BS_Arena.doP2Move4();
+			//bsa.doP2Move4();
+			//bsa.setP1Health();
 		}
 
 	}

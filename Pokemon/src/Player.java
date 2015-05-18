@@ -4,12 +4,6 @@ import java.util.Vector;
 public class Player {
 	
 	private String name;
-	private Pokemon Pokemon1 = null;
-	private Pokemon Pokemon2 = null;
-	private Pokemon Pokemon3 = null;
-	private Pokemon Pokemon4 = null;
-	private Pokemon Pokemon5 = null;
-	private Pokemon Pokemon6 = null;
 	
 	private int playerNum;
 	
@@ -20,13 +14,9 @@ public class Player {
 		
 		pokemon = new Vector<Pokemon>();
 		
-		pokemon.addElement(Pokemon1);
-		pokemon.addElement(Pokemon2);
-		pokemon.addElement(Pokemon3);
-		pokemon.addElement(Pokemon4);
-		pokemon.addElement(Pokemon5);
-		pokemon.addElement(Pokemon6);
-		
+		for (int i = 0; i < 6; i++) {
+			pokemon.add(null);
+		}		
 	}
 	
 		public void setName(String name) {
