@@ -4,10 +4,22 @@ import objectdraw.*;
 
 public class BattleSimulator {
 	
-	int weatherStatus = 0;
 	// 0 = clear, 1 = rain, 2 = sun, 3 = sandstorm, 4 = hail
+	int weatherStatus = 0;
 	int weatherCounter = 0;
-
+	
+	//0 = normal, 1 = Burn, 2 = Sleep, 3 = Frozen, 4 = Paralyzed, 5 = Poison
+	int P1Status = 0;
+	boolean P1BadlyPoisoned = false;
+	boolean P1Confused = false;
+	boolean P1Infatuated = false;
+	boolean P1Fainted = false;
+	int P2Status = 0;
+	boolean P2BadlyPoisoned = false;
+	boolean P2Confused = false;
+	boolean P2Infatuated = false;
+	boolean P2Fainted = false;
+	
 	int P1AttackBoost = 0;
 	int P1DefenseBoost = 0;
 	int P1SpAttackBoost = 0;
