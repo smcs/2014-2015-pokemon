@@ -8,7 +8,7 @@ public class Pokemon {
 	
 	String level, name = null;
 	Move move1, move2, move3, move4; 
-	private int health;
+	private int health, species;
 	
 	public Pokemon (int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			int Status, boolean confused, boolean Gender, int CatchRate,
@@ -26,11 +26,15 @@ public class Pokemon {
 		move2 = new Move(Move2);
 		move3 = new Move(Move3);
 		move4 = new Move(Move4);
+		species = Species;
 	
 	}
 	
 	public String getName(){
 		return name;
+	}
+	public int getSpecies(){
+		return species + 1;
 	}
 	public String getLevel(){
 		return level;

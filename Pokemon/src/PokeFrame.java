@@ -63,7 +63,6 @@ public class PokeFrame extends JFrame {
 		battleSimulator = new BattleSimulator();
 		buttonListener = new PokeFrameButtonListener(homeScreen, battleSimulator);
 		
-		
 		JButton battleSim = new JButton("Battle Simulator");
 		buttonListener.registerButton(1);
 		battleSim.addActionListener(buttonListener);

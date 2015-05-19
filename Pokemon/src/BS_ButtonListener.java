@@ -15,46 +15,39 @@ public class BS_ButtonListener implements ActionListener {
 	private int button;
 	private Player p1, p2;
 
-	public BS_ButtonListener(BattleSimulator battleSimulator) {
+	public BS_ButtonListener(BattleSimulator battleSimulator, BS_Arena bs_arena) {
 		bs = battleSimulator;
-		
+		bsa = bs_arena;
+
 		p1 = bs.getPlayer(0);
 		p2 = bs.getPlayer(1);
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (button == 1) {
+		if (e.getActionCommand() == bsa.getP1Move1()) {
 			bsa.doP1Move1();
-			bsa.setP2Health();
 		}
-		if (button == 2) {
+		if (e.getActionCommand() == bsa.getP1Move2()) {
 			bsa.doP1Move2();
-			bsa.setP2Health();
 		}
-		if (button == 3) {
+		if (e.getActionCommand() == bsa.getP1Move3()) {
 			bsa.doP1Move3();
-			bsa.setP2Health();
 		}
-		if (button == 4) {
+		if (e.getActionCommand() == bsa.getP1Move4()) {
 			bsa.doP1Move4();
-			bsa.setP2Health();
 		}
-		if (button == 5) {
+		if (e.getActionCommand() == bsa.getP2Move1()) {
 			bsa.doP2Move1();
-			bsa.setP1Health();
 		}
-		if (button == 6) {
+		if (e.getActionCommand() == bsa.getP2Move2()) {
 			bsa.doP2Move2();
-			bsa.setP1Health();
 		}
-		if (button == 7) {
+		if (e.getActionCommand() == bsa.getP2Move3()) {
 			bsa.doP2Move3();
-			bsa.setP1Health();
 		}
-		if (button == 8) {
-			//bsa.doP2Move4();
-			//bsa.setP1Health();
+		if (e.getActionCommand() == bsa.getP2Move4()) {
+			bsa.doP2Move4();
 		}
 
 	}
