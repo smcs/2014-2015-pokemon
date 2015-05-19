@@ -50,59 +50,58 @@ public class BattleSimulator {
 		players.add(0, p1);
 		players.add(1, p2);
 		
-		/*
+		
 		if(p1.getPoke1().getSpecies() == 1){
 			
-			//IV is random between 0 - 31
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 1){
 			
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 2){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 2){
 	
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 3){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 3){
 			
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 4){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 4){
 	
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 5){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 5){
 			
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 6){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 6){
 	
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 7){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 7){
 			
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 8){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 8){
 	
-		}
+		}/*
 		if(p1.getPoke1().getSpecies() == 9){
 			
-		}
+		}/*
 		if(p2.getPoke1().getSpecies() == 9){
 			
 		}*/
