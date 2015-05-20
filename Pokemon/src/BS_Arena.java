@@ -13,15 +13,13 @@ public class BS_Arena extends BS_JPanel {
 
 	private JProgressBar healthBar1, healthBar2;
 
-	private int p1health, p2health;
+	private int p1healthMax, p2healthMax, p1health, p2health;
 
 	private boolean turn = false;
 
 	private Player p1, p2;
 
 	public BS_Arena(Player P1, Player P2, BattleSimulator battleSimulator) {
-
-		bs.setRan();
 		
 		p1 = P1;
 		p2 = P2;
@@ -33,6 +31,8 @@ public class BS_Arena extends BS_JPanel {
 
 		p1health = bs.getP1Health();
 		p2health = bs.getP2Health();
+		p1healthMax = p1health;
+		p2healthMax = p2health;
 		System.out.println(p1health + " and " + p2health);
 
 		// FramedRect border1 = new FramedRect(10, 10, 40, 110, canvas);
@@ -99,6 +99,7 @@ public class BS_Arena extends BS_JPanel {
 		healthBar1.setOrientation(SwingConstants.VERTICAL);
 		healthBar1.setBounds(5, 6, 50, 182);
 		add(healthBar1);
+		healthBar1.setMaximum(p1healthMax);
 		healthBar1.setValue(p1health);
 		// healthBar1.setValue(p1health - 50);
 
@@ -106,6 +107,7 @@ public class BS_Arena extends BS_JPanel {
 		healthBar2.setOrientation(SwingConstants.VERTICAL);
 		healthBar2.setBounds(695, 6, 50, 182);
 		add(healthBar2);
+		healthBar2.setMaximum(p2healthMax);
 		healthBar2.setValue(p2health);
 
 	}
@@ -149,6 +151,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p2health > 0) {
 			setP2Health();
 		} else {
+			p2health = 0;
+			setP2Health();
 			endGame(1);
 		}
 
@@ -160,6 +164,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p2health > 0) {
 			setP2Health();
 		} else {
+			p2health = 0;
+			setP2Health();
 			endGame(1);
 		}
 
@@ -171,6 +177,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p2health > 0) {
 			setP2Health();
 		} else {
+			p2health = 0;
+			setP2Health();
 			endGame(1);
 		}
 
@@ -182,6 +190,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p2health > 0) {
 			setP2Health();
 		} else {
+			p2health = 0;
+			setP2Health();
 			endGame(1);
 		}
 
@@ -193,6 +203,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p1health > 0) {
 			setP1Health();
 		} else {
+			p1health = 0;
+			setP1Health();
 			endGame(2);
 		}
 
@@ -204,6 +216,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p1health > 0) {
 			setP1Health();
 		} else {
+			p1health = 0;
+			setP1Health();
 			endGame(2);
 		}
 
@@ -215,6 +229,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p1health > 0) {
 			setP1Health();
 		} else {
+			p1health = 0;
+			setP1Health();
 			endGame(2);
 		}
 
@@ -226,6 +242,8 @@ public class BS_Arena extends BS_JPanel {
 		if (p1health > 0) {
 			setP1Health();
 		} else {
+			p1health = 0;
+			setP1Health();
 			endGame(2);
 		}
 

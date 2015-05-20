@@ -38,8 +38,12 @@ public class BattleSimulator {
 	int P2EvasionBoost = 0;
 	int P2AccuracyBoost = 0;
 
-	int p1Health, p2Health, p1Atk, p2Atk, p1Def, p2Def, p1SpAtk, p2SpAtk,
-			p1SpDef, p2SpDef, p1Speed, p2Speed;
+	private int p1Health, p2Health, p1Atk, p2Atk, p1Def, p2Def, p1SpAtk,
+			p2SpAtk, p1SpDef, p2SpDef, p1Speed, p2Speed;
+	private int num1Base = 318, num2Base = 405, num3Base = 525, num4Base = 309,
+			num5Base = 405, num6Base = 534, num7Base = 314, num8Base = 405,
+			num9Base = 530;
+	private int p1Base, p2Base;
 	private boolean ran = false;
 
 	private Player p1, p2;
@@ -54,77 +58,105 @@ public class BattleSimulator {
 		players.add(0, p1);
 		players.add(1, p2);
 
-		if (ran == true) {
-			if (p1.getPoke1().getSpecies() == 1) {
-				p1Health = (int) hpCalculator(318, 20, p1.getPoke1().getHpEV(),
-						p1.getPoke1().getLevel());
-				p1Atk = (int) statCalculator(318, 20, p1.getPoke1().getAtEV(),
-						p1.getPoke1().getLevel(), Nature.Adamant, 0);
-				p1Def = (int) statCalculator(318, 20, p1.getPoke1().getDfEV(),
-						p1.getPoke1().getLevel(), Nature.Adamant, 1);
-				p1SpAtk = (int) statCalculator(318, 20, p1.getPoke1().getSpatEV(),
-						p1.getPoke1().getLevel(), Nature.Adamant, 2);
-				p1SpDef = (int) statCalculator(318, 20, p1.getPoke1().getSpdfEV(),
-						p1.getPoke1().getLevel(), Nature.Adamant, 3);
-				p1Speed = (int) statCalculator(318, 20, p1.getPoke1().getSpdEV(),
-						p1.getPoke1().getLevel(), Nature.Adamant, 4);
-
-			}
-			if (p2.getPoke1().getSpecies() == 1) {
-				p2Health = (int) hpCalculator(318, 20, p2.getPoke1().getHpEV(),
-						p2.getPoke1().getLevel());
-				p2Atk = (int) statCalculator(318, 20, p2.getPoke1().getAtEV(),
-						p2.getPoke1().getLevel(), Nature.Adamant, 0);
-				p2Def = (int) statCalculator(318, 20, p2.getPoke1().getDfEV(),
-						p2.getPoke1().getLevel(), Nature.Adamant, 1);
-				p2SpAtk = (int) statCalculator(318, 20, p2.getPoke1().getSpatEV(),
-						p2.getPoke1().getLevel(), Nature.Adamant, 2);
-				p2SpDef = (int) statCalculator(318, 20, p2.getPoke1().getSpdfEV(),
-						p2.getPoke1().getLevel(), Nature.Adamant, 3);
-				p2Speed = (int) statCalculator(318, 20, p2.getPoke1().getSpdEV(),
-						p2.getPoke1().getLevel(), Nature.Adamant, 4);
-			}/*
-			 * if(p1.getPoke1().getSpecies() == 2){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 2){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 3){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 3){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 4){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 4){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 5){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 5){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 6){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 6){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 7){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 7){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 8){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 8){
-			 * 
-			 * }/* if(p1.getPoke1().getSpecies() == 9){
-			 * 
-			 * }/* if(p2.getPoke1().getSpecies() == 9){
-			 * 
-			 * }
-			 */
-
-		}
-
 		/*
 		 * if(turnOrder(P1Speed, P2Speed) == true){ P1Turn; P2Turn; }
 		 * if(turnOrder(P1Speed, P2Speed) == false){ P2Turn; P1Turn; }
 		 */
+
+	}
+
+	public void pokeStats() {
+
+		if (ran == true) {
+			if (p1.getPoke1().getSpecies() == 1) {
+				p1Base = num1Base;
+			}
+			if (p2.getPoke1().getSpecies() == 1) {
+				p2Base = num1Base;
+			}
+			if (p1.getPoke1().getSpecies() == 2) {
+				p1Base = num2Base;
+			}
+			if (p2.getPoke1().getSpecies() == 2) {
+				p2Base = num2Base;
+			}
+			if (p1.getPoke1().getSpecies() == 3) {
+				p1Base = num3Base;
+			}
+			if (p2.getPoke1().getSpecies() == 3) {
+				p2Base = num3Base;
+			}
+			if (p1.getPoke1().getSpecies() == 4) {
+				p1Base = num4Base;
+			}
+			if (p2.getPoke1().getSpecies() == 4) {
+				p2Base = num4Base;
+			}
+			if (p1.getPoke1().getSpecies() == 5) {
+				p1Base = num5Base;
+			}
+			if (p2.getPoke1().getSpecies() == 5) {
+				p2Base = num5Base;
+			}
+			if (p1.getPoke1().getSpecies() == 6) {
+				p1Base = num6Base;
+			}
+			if (p2.getPoke1().getSpecies() == 6) {
+				p2Base = num6Base;
+			}
+			if (p1.getPoke1().getSpecies() == 7) {
+				p1Base = num7Base;
+			}
+			if (p2.getPoke1().getSpecies() == 7) {
+				p2Base = num7Base;
+			}
+			if (p1.getPoke1().getSpecies() == 8) {
+				p1Base = num8Base;
+			}
+			if (p2.getPoke1().getSpecies() == 8) {
+				p2Base = num8Base;
+			}
+			if (p1.getPoke1().getSpecies() == 9) {
+				p1Base = num9Base;
+			}
+			if (p2.getPoke1().getSpecies() == 9) {
+				p2Base = num9Base;
+			}
+
+		}
+
+		p1Health = (int) hpCalculator(p1Base, 20, p1.getPoke1().getHpEV(), p1
+				.getPoke1().getLevel());
+		System.out.println(p1Health);
+		p1Atk = (int) statCalculator(p1Base, 20, p1.getPoke1().getAtEV(), p1
+				.getPoke1().getLevel(), Nature.Adamant, 0);
+		System.out.println(p1Atk);
+		p1Def = (int) statCalculator(p1Base, 20, p1.getPoke1().getDfEV(), p1
+				.getPoke1().getLevel(), Nature.Adamant, 1);
+		System.out.println(p1Def);
+		p1SpAtk = (int) statCalculator(p1Base, 20, p1.getPoke1().getSpatEV(),
+				p1.getPoke1().getLevel(), Nature.Adamant, 2);
+		System.out.println(p1SpAtk);
+		p1SpDef = (int) statCalculator(p1Base, 20, p1.getPoke1().getSpdfEV(),
+				p1.getPoke1().getLevel(), Nature.Adamant, 3);
+		System.out.println(p1SpDef);
+		p1Speed = (int) statCalculator(p1Base, 20, p1.getPoke1().getSpdEV(), p1
+				.getPoke1().getLevel(), Nature.Adamant, 4);
+		System.out.println(p1Speed);
+
+		p2Health = (int) hpCalculator(p2Base, 20, p2.getPoke1().getHpEV(), p2
+				.getPoke1().getLevel());
+
+		p2Atk = (int) statCalculator(p2Base, 20, p2.getPoke1().getAtEV(), p2
+				.getPoke1().getLevel(), Nature.Adamant, 0);
+		p2Def = (int) statCalculator(p2Base, 20, p2.getPoke1().getDfEV(), p2
+				.getPoke1().getLevel(), Nature.Adamant, 1);
+		p2SpAtk = (int) statCalculator(p2Base, 20, p2.getPoke1().getSpatEV(),
+				p2.getPoke1().getLevel(), Nature.Adamant, 2);
+		p2SpDef = (int) statCalculator(p2Base, 20, p2.getPoke1().getSpdfEV(),
+				p2.getPoke1().getLevel(), Nature.Adamant, 3);
+		p2Speed = (int) statCalculator(p2Base, 20, p2.getPoke1().getSpdEV(), p2
+				.getPoke1().getLevel(), Nature.Adamant, 4);
 
 	}
 

@@ -21,7 +21,7 @@ public class Move {
 			accuracy = .95;
 			pp = 35;
 			type = Type.Normal;
-			name = "tackle";
+			name = "Tackle";
 			special = 0;
 		}
 		//scratch
@@ -30,7 +30,7 @@ public class Move {
 			accuracy = 1; 
 			pp = 35;
 			type = Type.Normal;
-			name = "scratch";
+			name = "Scratch";
 			special = 0;
 		}
 		//water gun
@@ -39,7 +39,7 @@ public class Move {
 			accuracy = 1;
 			pp = 25;
 			type = Type.Water;
-			name = "water gun";
+			name = "Water Gun";
 			special = 1;
 		}
 		//ember
@@ -48,7 +48,7 @@ public class Move {
 			accuracy = 1;
 			pp = 25;
 			type = Type.Fire;
-			name = "ember";
+			name = "Ember";
 			special = 1;
 		}
 		//razor leaf
@@ -57,7 +57,7 @@ public class Move {
 			accuracy = 1;
 			pp = 25;
 			type = Type.Grass;
-			name = "razor leaf";
+			name = "Razor Leaf";
 			special = 1;
 		}
 		//leer
@@ -66,7 +66,7 @@ public class Move {
 			accuracy = 1;
 			pp = 30;
 			type = Type.Normal;
-			name = "leer";
+			name = "Leer";
 		}
 		//growl
 		if (moveNumber == 6) {
@@ -74,7 +74,7 @@ public class Move {
 			accuracy = 1;
 			pp = 40;
 			type = Type.Normal;
-			name = "growl";
+			name = "Growl";
 		}
 		//sword dance
 		if (moveNumber == 7) {
@@ -82,21 +82,21 @@ public class Move {
 			accuracy = 1;
 			pp = 20;
 			type = Type.Normal;
-			name = "sword dance";
+			name = "Sword Dance";
 		}//harden
 		if (moveNumber == 8) {
 			power = 0;
 			accuracy = 1;
 			pp = 30;
 			type = Type.Normal;
-			name = "harden";
+			name = "Harden";
 		}//agility
 		if (moveNumber == 9) {
 			power = 0;
 			accuracy = 1;
 			pp = 30;
 			type = Type.Psychic;
-			name = "agility";
+			name = "Agility";
 		}
 		
 		if(special == 0){

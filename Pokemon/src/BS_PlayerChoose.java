@@ -660,7 +660,7 @@ public class BS_PlayerChoose extends BS_JPanel {
 					temp.repaint();
 					temp.attachBattleSimulator(battleSimulator);
 				} else if (ran == true) {
-
+					battleSimulator.pokeStats();
 					BS_JPanel temp = new BS_Arena(battleSimulator.getPlayer(0),
 							battleSimulator.getPlayer(1), ugly.battleSimulator);
 					((JFrame) SwingUtilities.getWindowAncestor(ugly))
