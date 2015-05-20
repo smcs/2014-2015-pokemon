@@ -6,9 +6,10 @@ public class Pokemon {
 	Vector<Poke> moveList = Poke.PopulateMoveVector();
 	Vector<Poke> pokeList = Poke.PopulatePokeVector();
 	
-	String level, name = null;
+	String name = null;
 	Move move1, move2, move3, move4; 
-	private int health, species;
+	private int health, species, level;
+	private int hpEV, atEV, dfEV, spatEV, spdfEV, spdEV;
 	
 	public Pokemon (int Species, String Name, Ability Ability, Nature Nature, Item HeldItem, int Level, int Exp,
 			int Status, boolean confused, boolean Gender, int CatchRate,
@@ -21,12 +22,18 @@ public class Pokemon {
 			int Speediv, int Speedev)
 	{
 		
-		level = Integer.toString(Level);
+		level = Level;
 		move1 = new Move(Move1);
 		move2 = new Move(Move2);
 		move3 = new Move(Move3);
 		move4 = new Move(Move4);
 		species = Species;
+		hpEV = Hev;
+		atEV = Atkev;
+		dfEV = Defev;
+		spatEV = SpAtkev;
+		spdfEV = SpDefev;
+		spdEV = Speedev;
 	
 	}
 	
@@ -36,7 +43,7 @@ public class Pokemon {
 	public int getSpecies(){
 		return species + 1;
 	}
-	public String getLevel(){
+	public int getLevel(){
 		return level;
 	}
 	public Move getMove1(){
@@ -53,6 +60,24 @@ public class Pokemon {
 	}
 	public int getHealth(){
 		return health;
+	}
+	public int getHpEV(){
+		return hpEV;
+	}
+	public int getAtEV(){
+		return atEV;
+	}
+	public int getDfEV(){
+		return dfEV;
+	}
+	public int getSpatEV(){
+		return spatEV;
+	}
+	public int getSpdfEV(){
+		return spdfEV;
+	}
+	public int getSpdEV(){
+		return spdEV;
 	}
 	
 	

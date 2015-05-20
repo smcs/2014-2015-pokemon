@@ -7,6 +7,7 @@ public class Move {
 	private int pp;
 	private Type type;
 	private String name;
+	private int special = 0;
 	
 	public Move(int moveNumber/*
 							 * String Name, Type MoveType, int BasePower,
@@ -21,6 +22,7 @@ public class Move {
 			pp = 35;
 			type = Type.Normal;
 			name = "tackle";
+			special = 0;
 		}
 		//scratch
 		if (moveNumber == 1) {
@@ -29,6 +31,7 @@ public class Move {
 			pp = 35;
 			type = Type.Normal;
 			name = "scratch";
+			special = 0;
 		}
 		//water gun
 		if (moveNumber == 2) {
@@ -37,6 +40,7 @@ public class Move {
 			pp = 25;
 			type = Type.Water;
 			name = "water gun";
+			special = 1;
 		}
 		//ember
 		if (moveNumber == 3) {
@@ -45,6 +49,7 @@ public class Move {
 			pp = 25;
 			type = Type.Fire;
 			name = "ember";
+			special = 1;
 		}
 		//razor leaf
 		if (moveNumber == 4) {
@@ -53,6 +58,7 @@ public class Move {
 			pp = 25;
 			type = Type.Grass;
 			name = "razor leaf";
+			special = 1;
 		}
 		//leer
 		if (moveNumber == 5) {
@@ -91,6 +97,12 @@ public class Move {
 			pp = 30;
 			type = Type.Psychic;
 			name = "agility";
+		}
+		
+		if(special == 0){
+			//power = power*
+		} else if(special == 1){
+			
 		}
 
 	}
